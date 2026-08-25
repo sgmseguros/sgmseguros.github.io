@@ -1,241 +1,1423 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-UY">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>SGM Seguros Uruguay | Seguro automotor, hogar, vida y viaje</title>
-
-<meta name="description" content="SGM Seguros Uruguay. Seguro automotor, seguros de vehículos, hogar, vida, seguro de viaje, asistencia al viajero internacional y garantía de alquiler. Asesoramiento personalizado en Montevideo y todo Uruguay.">
-
+<meta name="description" content="SGM Seguros Uruguay. Seguro automotor, hogar, vida, seguro de viaje, asistencia al viajero internacional y garantía de alquiler. Consulta rápida y cotización guiada para todo Uruguay.">
 <link rel="canonical" href="https://sgmseguros.github.io/">
 <meta name="robots" content="index, follow">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sgmseguros.github.io/">
 <meta property="og:title" content="SGM Seguros Uruguay | Protección y asesoramiento">
-<meta property="og:description" content="Seguro automotor, vehículos, hogar, vida, seguro de viaje, asistencia al viajero internacional y garantía de alquiler. Asesoramiento personalizado en Uruguay.">
+<meta property="og:description" content="Consulta rápida y cotización guiada de seguros en Uruguay, con atención directa por WhatsApp.">
 <meta property="og:locale" content="es_UY">
-
-<!-- Twitter / X -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SGM Seguros Uruguay">
-<meta name="twitter:description" content="Seguro automotor, vehículos, hogar, vida, seguro de viaje, asistencia al viajero internacional y garantía de alquiler.">
-
-<!-- Favicon: lo agregaremos cuando tengamos el logo SGM -->
-<!-- <link rel="icon" type="image/png" href="/favicon.png"> -->
-
-<!-- Datos estructurados para buscadores -->
+<meta name="twitter:description" content="Seguro automotor, hogar, vida, viaje y garantía de alquiler con asesoramiento personalizado.">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
-  "name": "SGM Seguros",
-  "url": "https://sgmseguros.github.io/",
-  "description": "Asesoramiento en seguros de vehículos, hogar, vida, seguro de viaje, asistencia al viajero internacional y garantía de alquiler en Uruguay.",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Uruguay"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Montevideo",
-    "addressCountry": "UY"
+{"@context":"https://schema.org","@type":"InsuranceAgency","name":"SGM Seguros","url":"https://sgmseguros.github.io/","description":"Asesoramiento en seguros automotor, hogar, vida, viaje y garantía de alquiler en Uruguay.","areaServed":{"@type":"Country","name":"Uruguay"},"address":{"@type":"PostalAddress","addressLocality":"Montevideo","addressCountry":"UY"}}
+</script>
+<style>
+:root {
+  --ink: #131416;
+  --ink-soft: #2b2d31;
+  --paper: #f7f6f2;
+  --white: #ffffff;
+  --line: #d9d8d3;
+  --muted: #66686e;
+  --red: #d91f2b;
+  --red-dark: #b6131d;
+  --red-soft: #fff0f1;
+  --green: #1f9d59;
+  --shadow: 0 24px 70px rgba(20, 21, 23, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(217, 31, 43, 0.34);
+  outline-offset: 3px;
+}
+
+svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 78px;
+  padding: 0 max(24px, calc((100vw - 1240px) / 2));
+  border-bottom: 1px solid rgba(217, 216, 211, 0.82);
+  background: rgba(247, 246, 242, 0.94);
+  backdrop-filter: blur(16px);
+}
+
+.brand,
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 54px;
+  height: 34px;
+  padding: 0 9px;
+  border-radius: 4px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.brand-name {
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.site-header nav a,
+.footer-contact a {
+  transition: color 160ms ease;
+}
+
+.site-header nav a:hover,
+.footer-contact a:hover {
+  color: var(--red);
+}
+
+.header-action {
+  justify-self: end;
+  padding: 11px 17px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 750;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.header-action:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.hero,
+.section,
+footer {
+  width: min(1240px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(48px, 8vw, 110px);
+  align-items: center;
+  min-height: calc(100vh - 78px);
+  padding-block: 80px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--red);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: 850;
+  letter-spacing: -0.04em;
+}
+
+.hero h1 {
+  max-width: 760px;
+  font-size: clamp(3.25rem, 6vw, 6.4rem);
+  line-height: 0.93;
+}
+
+.hero h1 span {
+  color: var(--red);
+  font-style: normal;
+  font-weight: 850;
+}
+
+.hero-lead {
+  max-width: 680px;
+  margin: 30px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 21px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 760;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.button-primary {
+  background: var(--red);
+  color: var(--white);
+}
+
+.button-primary:hover {
+  background: var(--red-dark);
+}
+
+.button-ghost {
+  border-color: var(--line);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.button-ghost:hover {
+  border-color: var(--ink);
+}
+
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 34px 0 0;
+  padding: 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 680;
+  list-style: none;
+}
+
+.hero-proof li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-proof svg {
+  color: var(--red);
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(26px, 4vw, 50px);
+  border-radius: 24px;
+  background: var(--ink);
+  box-shadow: var(--shadow);
+  color: var(--white);
+}
+
+.hero-panel::before {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 280px;
+  height: 280px;
+  border: 55px solid rgba(217, 31, 43, 0.28);
+  border-radius: 50%;
+  content: "";
+}
+
+.panel-kicker {
+  position: relative;
+  margin: 0 0 30px;
+  color: #b9bac0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.route-preview {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+  border: 1px solid #3a3c42;
+  border-radius: 14px;
+  background: #202226;
+}
+
+.route-preview > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.route-preview-quote > span {
+  background: var(--red);
+  color: var(--white);
+}
+
+.route-preview strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.route-preview p {
+  margin: 6px 0 0;
+  color: #aeb0b6;
+  font-size: 0.86rem;
+}
+
+.route-connector {
+  width: 1px;
+  height: 22px;
+  margin-left: 48px;
+  background: #4e5056;
+}
+
+.panel-result {
+  position: relative;
+  margin-top: 28px;
+  padding: 21px 23px;
+  border-left: 3px solid var(--red);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.panel-result span {
+  display: block;
+  margin-bottom: 7px;
+  color: #aaaeb5;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.panel-result strong {
+  line-height: 1.45;
+}
+
+.section {
+  padding-block: 110px;
+  scroll-margin-top: 70px;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 0.7fr);
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.section h2 {
+  font-size: clamp(2.5rem, 5vw, 4.7rem);
+  line-height: 1.03;
+}
+
+.section-heading > p,
+.lead-heading > p:last-child,
+.trust-copy > p:last-child,
+.privacy-note > p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.services {
+  border-top: 1px solid var(--line);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  grid-column: span 2;
+  flex-direction: column;
+  min-height: 320px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.service-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(20, 21, 23, 0.08);
+}
+
+.service-number {
+  margin-bottom: 40px;
+  color: #b0b1b4;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.service-card > p:nth-of-type(1) {
+  margin: 0 0 10px;
+  color: var(--red);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.service-card h3 {
+  margin: 0;
+  font-size: 1.32rem;
+}
+
+.service-card > p:nth-of-type(2) {
+  margin: 15px 0 28px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.service-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  font-size: 0.84rem;
+  font-weight: 780;
+}
+
+.service-card a:hover {
+  color: var(--red);
+}
+
+.route-intro {
+  display: grid;
+  grid-template-columns: 0.76fr 1.24fr;
+  gap: 80px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+
+.route-principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.route-principles article {
+  min-height: 280px;
+  padding: 31px;
+  border-radius: 18px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.route-principles article:last-child {
+  background: var(--red);
+}
+
+.route-principles span {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.route-principles h3 {
+  margin: 65px 0 12px;
+  font-family: inherit;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.route-principles p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.lead-section {
+  width: 100%;
+  max-width: none;
+  padding: 110px max(24px, calc((100vw - 1240px) / 2));
+  background: #ecebe7;
+}
+
+.lead-heading {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 60px;
+  align-items: end;
+  max-width: 1240px;
+  margin: 0 auto 42px;
+}
+
+.lead-heading .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: -38px;
+}
+
+.lead-heading h2 {
+  max-width: 520px;
+}
+
+.journey-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1240px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+}
+
+.journey-switch button {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 80px;
+  padding: 18px 24px;
+  border: 0;
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+  text-align: left;
+}
+
+.journey-switch button + button {
+  border-left: 1px solid var(--line);
+}
+
+.journey-switch button.active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.journey-switch button > span {
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.journey-switch button strong {
+  font-size: 0.98rem;
+}
+
+.journey-switch button small {
+  color: inherit;
+  font-size: 0.72rem;
+}
+
+.form-shell {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  max-width: 1240px;
+  margin: 0 auto;
+  border-radius: 0 0 18px 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.form-aside {
+  padding: clamp(32px, 5vw, 58px);
+  background: var(--red);
+  color: var(--white);
+}
+
+.form-number {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 65px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.form-aside h3 {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.form-aside > p {
+  margin: 22px 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.65;
+}
+
+.form-aside ul {
+  display: grid;
+  gap: 12px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-aside li {
+  position: relative;
+  padding-left: 21px;
+  font-size: 0.87rem;
+  line-height: 1.45;
+}
+
+.form-aside li::before {
+  position: absolute;
+  top: 0.48em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--white);
+  content: "";
+}
+
+.lead-form {
+  position: relative;
+  padding: clamp(30px, 5vw, 60px);
+  background: var(--white);
+}
+
+.form-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.lead-form > label,
+.form-grid > label,
+.risk-fields > label,
+.risk-fields .span-two > label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 730;
+}
+
+.lead-form > label > small,
+.form-grid label > small {
+  display: inline;
+  color: #8a8b90;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  width: 100%;
+  border: 1px solid #cfd0d3;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.lead-form input,
+.lead-form select {
+  min-height: 49px;
+  padding: 0 13px;
+}
+
+.lead-form textarea {
+  min-height: 115px;
+  margin-top: 22px;
+  padding: 13px;
+  resize: vertical;
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(217, 31, 43, 0.12);
+  outline: none;
+}
+
+.lead-form label > span[aria-label="obligatorio"] {
+  color: var(--red);
+}
+
+.honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+
+.consent-row {
+  grid-template-columns: 18px 1fr !important;
+  gap: 11px !important;
+  align-items: start;
+  margin-top: 22px;
+  color: var(--muted) !important;
+  font-size: 0.76rem !important;
+  font-weight: 500 !important;
+  line-height: 1.5;
+}
+
+.consent-row input {
+  width: 17px;
+  min-height: 17px;
+  margin: 2px 0 0;
+  accent-color: var(--red);
+}
+
+.consent-row a,
+.form-message a {
+  color: var(--red);
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.form-message {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+}
+
+.form-message p {
+  margin: 0 0 7px;
+}
+
+.form-message.error {
+  border: 1px solid #f2bac0;
+  background: var(--red-soft);
+  color: #7e151e;
+}
+
+.quote-aside {
+  background: var(--ink);
+}
+
+.progress-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.progress-list > div {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+  color: #7c7f86;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.progress-list span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #4b4d54;
+  border-radius: 50%;
+  font-size: 0.66rem;
+}
+
+.progress-list .complete {
+  color: var(--white);
+}
+
+.progress-list .complete span {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.quote-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.quote-form legend {
+  padding: 0;
+  font-family: inherit;
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
+  font-weight: 800;
+}
+
+.field-intro {
+  margin: 12px 0 28px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.insurance-options {
+  display: grid;
+  gap: 10px;
+}
+
+.insurance-options label {
+  cursor: pointer;
+}
+
+.insurance-options input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.insurance-options label > span {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 62px;
+  padding: 14px 17px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  transition:
+    border-color 150ms ease,
+    background 150ms ease;
+}
+
+.insurance-options label > span small {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.insurance-options input:checked + span {
+  border-color: var(--red);
+  background: var(--red-soft);
+  color: var(--red-dark);
+}
+
+.insurance-options input:focus-visible + span {
+  outline: 3px solid rgba(217, 31, 43, 0.28);
+  outline-offset: 2px;
+}
+
+.wizard-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.wizard-actions.end {
+  justify-content: flex-end;
+}
+
+.risk-fields {
+  align-items: end;
+}
+
+.span-two {
+  grid-column: 1 / -1;
+}
+
+.trust-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.trust-copy h2 {
+  max-width: 640px;
+  font-size: clamp(2.5rem, 4.7vw, 4.25rem);
+}
+
+.trust-copy > p:last-child {
+  max-width: 610px;
+  margin-top: 25px;
+}
+
+.trust-list {
+  border-top: 1px solid var(--line);
+}
+
+.trust-list > div {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 20px;
+  align-items: center;
+  min-height: 86px;
+  border-bottom: 1px solid var(--line);
+}
+
+.trust-list strong {
+  color: var(--red);
+  font-family: inherit;
+  font-size: 0.88rem;
+}
+
+.trust-list span {
+  font-weight: 720;
+}
+
+.privacy-note {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 90px;
+  align-items: center;
+  padding-inline: clamp(26px, 5vw, 65px);
+  border-radius: 22px;
+  background: var(--white);
+}
+
+.privacy-note h2 {
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 110px;
+  padding: 60px;
+  border-radius: 22px 22px 0 0;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.footer-brand {
+  align-items: flex-start;
+}
+
+.footer-brand strong {
+  font-size: 1rem;
+}
+
+.footer-brand p {
+  margin: 8px 0 0;
+  color: #a9abb1;
+  font-size: 0.83rem;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+  color: #d7d8dc;
+  font-size: 0.85rem;
+}
+
+.footer-bottom {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  padding-top: 28px;
+  border-top: 1px solid #33353a;
+  color: #888b92;
+  font-size: 0.74rem;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 25;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 4px solid var(--paper);
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  color: var(--white);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+@media (max-width: 1050px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .site-header nav {
+    display: none;
+  }
+
+  .hero,
+  .route-intro,
+  .trust-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-panel {
+    max-width: 720px;
+  }
+
+  .service-card {
+    grid-column: span 3;
+  }
+
+  .service-card:nth-child(4) {
+    grid-column: span 3;
+  }
+
+  .service-card:last-child {
+    grid-column: 2 / span 4;
+  }
+
+  .route-intro,
+  .trust-section {
+    gap: 50px;
+  }
+
+  .lead-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .lead-heading .eyebrow {
+    grid-column: auto;
+    margin-bottom: -4px;
+  }
+
+  .form-shell {
+    grid-template-columns: 0.8fr 1.2fr;
   }
 }
-</script>
 
-<style>
-:root{--red:#d71920;--dark:#151515;--gray:#555;--light:#f5f5f5;--white:#fff}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:#fff;line-height:1.5}a{text-decoration:none;color:inherit}.nav{position:sticky;top:0;z-index:10;background:#111;color:#fff;padding:14px 6%;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;font-size:25px;letter-spacing:-1px}.brand span{color:var(--red)}.navlinks{display:flex;gap:22px;font-size:14px}.hero{background:linear-gradient(115deg,#111 0%,#252525 68%,#3a3a3a 100%);color:#fff;padding:80px 6% 90px}.hero-inner{max-width:1100px;margin:auto}.eyebrow{color:#ff4a4f;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px}.hero h1{font-size:clamp(40px,7vw,72px);line-height:.98;max-width:850px;margin:15px 0}.hero p{font-size:20px;color:#ddd;max-width:680px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 22px;border-radius:8px;font-weight:700;display:inline-block}.primary{background:var(--red);color:#fff}.secondary{border:1px solid #777;color:#fff}.section{padding:65px 6%}.container{max-width:1100px;margin:auto}.section h2{font-size:36px;margin:0 0 12px}.muted{color:var(--gray)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.card{background:var(--light);padding:25px;border-radius:14px;border:1px solid #e8e8e8}.icon{font-size:28px}.card h3{margin:12px 0 6px}.band{background:#111;color:#fff}.band .muted{color:#ccc}.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.contactbox{background:#f5f5f5;border-radius:16px;padding:28px}.contactbox strong{display:block;font-size:20px;margin-bottom:5px}.footer{background:#0d0d0d;color:#aaa;padding:30px 6%;font-size:13px}.footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}@media(max-width:760px){.navlinks{display:none}.grid,.contact{grid-template-columns:1fr}.hero{padding-top:55px}.section{padding:50px 5%}}
+@media (max-width: 760px) {
+  .site-header {
+    min-height: 68px;
+    padding-inline: 18px;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .header-action {
+    padding: 9px 13px;
+    font-size: 0.76rem;
+  }
+
+  .hero,
+  .section,
+  footer {
+    width: min(100% - 32px, 1240px);
+  }
+
+  .hero {
+    gap: 48px;
+    padding-block: 64px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 14vw, 4.4rem);
+  }
+
+  .hero-actions,
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-proof {
+    display: grid;
+  }
+
+  .hero-panel {
+    padding: 24px;
+  }
+
+  .route-preview {
+    grid-template-columns: 42px 1fr;
+    padding: 17px;
+  }
+
+  .route-preview > span {
+    width: 42px;
+    height: 42px;
+  }
+
+  .route-connector {
+    margin-left: 38px;
+  }
+
+  .section {
+    padding-block: 76px;
+  }
+
+  .section-heading,
+  .route-principles,
+  .privacy-note {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    gap: 25px;
+    margin-bottom: 34px;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .service-card:nth-child(4),
+  .service-card:last-child {
+    grid-column: auto;
+    min-height: 270px;
+  }
+
+  .route-intro {
+    gap: 34px;
+  }
+
+  .route-principles {
+    gap: 12px;
+  }
+
+  .route-principles article {
+    min-height: 235px;
+  }
+
+  .route-principles h3 {
+    margin-top: 45px;
+  }
+
+  .lead-section {
+    width: 100%;
+    padding: 76px 16px;
+  }
+
+  .journey-switch {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-switch button + button {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .form-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .form-number {
+    margin-bottom: 32px;
+  }
+
+  .lead-form {
+    padding: 28px 20px;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .span-two {
+    grid-column: auto;
+  }
+
+  .wizard-actions {
+    flex-direction: column-reverse;
+  }
+
+  .wizard-actions .button {
+    width: 100%;
+  }
+
+  .trust-section {
+    gap: 38px;
+  }
+
+  .privacy-note {
+    gap: 24px;
+    padding: 36px 24px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 76px;
+    padding: 40px 24px 28px;
+  }
+
+  .footer-contact {
+    justify-items: start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+[hidden]{display:none!important}.quote-step{display:none}.quote-step.active{display:block}.mini-note{margin-top:14px;color:var(--muted);font-size:.76rem;line-height:1.55}.status-note{margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fafafa;color:var(--muted);font-size:.78rem}.quote-type-title{display:block}.department-select{min-width:0}
+
 </style>
 </head>
-
 <body>
+<header class="site-header">
+  <a class="brand" href="#inicio" aria-label="SGM Seguros - Inicio"><span class="brand-mark">SGM</span><span class="brand-name">Seguros</span></a>
+  <nav aria-label="Navegación principal"><a href="#seguros">Seguros</a><a href="#como-funciona">Cómo funciona</a><a href="#elegi-tu-recorrido">Cotizar</a><a href="#confianza">Por qué SGM</a></nav>
+  <a class="header-action" href="#elegi-tu-recorrido">Consultar / Cotizar</a>
+</header>
 
-<nav class="nav">
-  <div class="brand"><span>SGM</span> SEGUROS</div>
-  <div class="navlinks">
-    <a href="#seguros">Seguros</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#contacto">Contacto</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Más de 10 años acompañando clientes</div>
-
-    <h1>Seguros en Uruguay para proteger lo que más importa.</h1>
-
-    <p>
-      Seguro automotor, vehículos, hogar, vida, seguro de viaje y asistencia
-      al viajero internacional, con asesoramiento personalizado para encontrar
-      la cobertura adecuada para vos, tu familia y tus proyectos.
-    </p>
-
-    <div class="buttons">
-      <a class="btn primary"
-         href="https://wa.me/59898907603?text=Hola%20SGM%20Seguros%2C%20quiero%20asesorarme%20sobre%20un%20seguro."
-         target="_blank">
-         Hablar por WhatsApp
-      </a>
-
-      <a class="btn secondary" href="#seguros">
-        Ver coberturas
-      </a>
+<main>
+<section class="hero" id="inicio">
+  <div>
+    <p class="eyebrow">SGM Seguros · Uruguay</p>
+    <h1>Elegí tu seguro con <span>asesoramiento directo.</span></h1>
+    <p class="hero-lead">Te ayudamos a comparar alternativas y avanzar de dos formas: una consulta rápida para resolver una duda o una cotización guiada para adelantar la información clave.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#elegi-tu-recorrido">Empezar ahora →</a>
+      <a class="button button-ghost" href="https://wa.me/59898907603?text=Hola%20SGM%20Seguros%2C%20quiero%20asesorarme%20sobre%20un%20seguro." target="_blank" rel="noopener">Hablar por WhatsApp</a>
     </div>
+    <ul class="hero-proof"><li>✓ Atención en todo Uruguay</li><li>✓ Más de 10 años de experiencia</li><li>✓ Acompañamiento personalizado</li></ul>
+  </div>
+  <aside class="hero-panel" aria-label="Dos recorridos comerciales">
+    <p class="panel-kicker">Un mismo objetivo · dos recorridos</p>
+    <div class="route-preview"><span>01</span><div><strong>Consulta rápida</strong><p>Datos mínimos y contacto directo por WhatsApp.</p></div></div>
+    <div class="route-connector"></div>
+    <div class="route-preview route-preview-quote"><span>02</span><div><strong>Cotización guiada</strong><p>Preguntas adaptadas al seguro que querés cotizar.</p></div></div>
+    <div class="panel-result"><span>Resultado</span><strong>Una conversación comercial más clara, con la información necesaria desde el inicio.</strong></div>
+  </aside>
+</section>
+
+<section class="section services" id="seguros">
+  <div class="section-heading"><div><p class="eyebrow">Coberturas</p><h2>Protección para cada etapa.</h2></div><p>Trabajamos la consulta de cada ramo con un recorrido simple, sin pedir documentación sensible en esta primera etapa.</p></div>
+  <div class="service-grid">
+    <article class="service-card"><span class="service-number">01</span><p>Vehículos</p><h3>Seguro automotor</h3><p>Opciones de cobertura y asesoramiento para autos y otros vehículos.</p><a href="#elegi-tu-recorrido" data-prefill="automotor">Cotizar automotor →</a></article>
+    <article class="service-card"><span class="service-number">02</span><p>Propiedad</p><h3>Seguro de hogar</h3><p>Protección para vivienda, contenido y necesidades asociadas al hogar.</p><a href="#elegi-tu-recorrido" data-prefill="hogar">Cotizar hogar →</a></article>
+    <article class="service-card"><span class="service-number">03</span><p>Internacional</p><h3>Viaje y asistencia</h3><p>Seguro de viaje y asistencia al viajero internacional según destino y fechas.</p><a href="#elegi-tu-recorrido" data-prefill="viaje">Cotizar viaje →</a></article>
+    <article class="service-card"><span class="service-number">04</span><p>Personas</p><h3>Vida y ahorro</h3><p>Alternativas para protección familiar, respaldo de ingresos y planificación.</p><a href="#elegi-tu-recorrido" data-prefill="vida">Consultar vida →</a></article>
+    <article class="service-card"><span class="service-number">05</span><p>Alquiler</p><h3>Garantía de alquiler</h3><p>Orientación para garantías de vivienda o local comercial en Uruguay.</p><a href="#elegi-tu-recorrido" data-prefill="alquiler">Solicitar garantía →</a></article>
   </div>
 </section>
 
-<section class="section" id="seguros">
-  <div class="container">
+<section class="section route-intro" id="como-funciona">
+  <div><p class="eyebrow">Cómo funciona</p><h2>Elegís cuánto querés adelantar.</h2><p class="hero-lead">No todos llegan con la misma necesidad. Por eso la web ofrece un camino corto y otro más detallado, pero ambos terminan en atención humana.</p></div>
+  <div class="route-principles"><article><span>Consulta rápida</span><h3>Cuando querés orientación.</h3><p>Nombre, teléfono, ramo y una breve consulta. Ideal para comenzar sin completar una entrevista extensa.</p></article><article><span>Cotización guiada</span><h3>Cuando ya querés cotizar.</h3><p>Seleccionás el ramo y completás datos específicos para que el contacto comercial tenga mejor contexto.</p></article></div>
+</section>
 
-    <h2>Encontrá tu cobertura</h2>
+<section class="section lead-section" id="elegi-tu-recorrido">
+  <div class="lead-heading"><p class="eyebrow">Empezá ahora</p><h2>¿Cómo preferís avanzar?</h2><p>Los dos caminos terminan en una conversación directa con SGM. La diferencia es cuánta información querés adelantar.</p></div>
+  <div class="journey-switch" role="tablist" aria-label="Tipo de gestión">
+    <button type="button" id="tabQuick" role="tab" aria-selected="true" class="active"><span>01</span><strong>Consulta rápida</strong><small>1 minuto</small></button>
+    <button type="button" id="tabQuote" role="tab" aria-selected="false"><span>02</span><strong>Cotización guiada</strong><small>3 a 5 minutos</small></button>
+  </div>
 
-    <p class="muted">
-      Trabajamos con las principales compañías del mercado para ayudarte
-      a comparar opciones y encontrar una cobertura adecuada para vos.
-    </p>
-
-    <div class="grid">
-
-      <div class="card">
-        <div class="icon">🚗</div>
-        <h3>Seguro automotor y de vehículos</h3>
-        <p>
-          Opciones de cobertura para autos y vehículos, con asesoramiento
-          antes y después de contratar.
-        </p>
+  <div class="form-shell" id="quickPanel" role="tabpanel" aria-labelledby="tabQuick">
+    <div class="form-aside"><span class="form-number">01</span><h3>Una duda, una respuesta directa</h3><p>Dejanos los datos mínimos y abrimos WhatsApp con tu consulta ya identificada.</p><ul><li>No necesitás conocer detalles técnicos.</li><li>Elegís el seguro que te interesa.</li><li>Continuás con una persona, no con un bot.</li></ul></div>
+    <form class="lead-form" id="quickForm">
+      <div class="form-grid two-columns">
+        <label>Nombre y apellido <span aria-label="obligatorio">*</span><input name="fullName" type="text" autocomplete="name" required minlength="3" placeholder="Ej.: Juan Pérez"></label>
+        <label>Celular / WhatsApp <span aria-label="obligatorio">*</span><input name="phone" type="tel" autocomplete="tel" required minlength="8" placeholder="Ej.: 099 123 456"></label>
+        <label>Email <small>opcional</small><input name="email" type="email" autocomplete="email" placeholder="nombre@email.com"></label>
+        <label>Seguro de interés <span aria-label="obligatorio">*</span><select name="insuranceType" required><option value="" disabled selected>Seleccioná una opción</option><option value="automotor">Seguro automotor</option><option value="hogar">Seguro de hogar</option><option value="viaje">Seguro de viaje / asistencia internacional</option><option value="vida">Seguro de vida y ahorro</option><option value="alquiler">Garantía de alquiler</option><option value="otro">Otro asunto</option></select></label>
       </div>
+      <label>¿En qué podemos ayudarte? <small>opcional</small><textarea name="message" rows="4" maxlength="700" placeholder="Contanos brevemente tu consulta"></textarea></label>
+      <input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent-row"><input name="consent" type="checkbox" required><span>Autorizo a SGM Seguros a usar estos datos para responder y dar seguimiento a mi consulta. <a href="#privacidad">Ver uso de datos</a>.</span></label>
+      <button class="button button-primary submit-button" type="submit">Continuar por WhatsApp →</button>
+      <p class="mini-note">Al continuar se abrirá WhatsApp con un resumen y una referencia SGM.</p>
+    </form>
+  </div>
 
-      <div class="card">
-        <div class="icon">✈️</div>
-        <h3>Seguro de viaje y asistencia al viajero</h3>
-        <p>
-          Protección para tus viajes, con asistencia al viajero internacional
-          y opciones de cobertura adaptadas a cada destino.
-        </p>
-      </div>
+  <div class="form-shell quote-shell" id="quotePanel" role="tabpanel" aria-labelledby="tabQuote" hidden>
+    <div class="form-aside quote-aside"><span class="form-number">02</span><h3>Adelantá la información clave</h3><p>La entrevista cambia según el seguro elegido para pedir solo los datos que ayudan a preparar el próximo paso.</p><div class="progress-list" id="progressList"><div class="complete"><span>1</span>Cobertura</div><div><span>2</span>Datos del riesgo</div><div><span>3</span>Contacto</div></div></div>
+    <form class="lead-form quote-form" id="quoteForm">
+      <fieldset class="quote-step active" data-step="1"><legend>¿Qué querés cotizar?</legend><p class="field-intro">Elegí una cobertura. En el siguiente paso te pediremos la información específica.</p><div class="insurance-options" id="quoteOptions">
+        <label><input type="radio" name="quoteType" value="automotor" checked><span><strong>Seguro automotor</strong><small>Entrevista adaptada</small></span></label>
+        <label><input type="radio" name="quoteType" value="hogar"><span><strong>Seguro de hogar</strong><small>Entrevista adaptada</small></span></label>
+        <label><input type="radio" name="quoteType" value="viaje"><span><strong>Seguro de viaje / asistencia internacional</strong><small>Entrevista adaptada</small></span></label>
+        <label><input type="radio" name="quoteType" value="vida"><span><strong>Seguro de vida y ahorro</strong><small>Entrevista adaptada</small></span></label>
+        <label><input type="radio" name="quoteType" value="alquiler"><span><strong>Garantía de alquiler</strong><small>Entrevista adaptada</small></span></label>
+      </div><div class="wizard-actions end"><button class="button button-primary" type="button" data-next="2">Continuar →</button></div></fieldset>
 
-      <div class="card">
-        <div class="icon">🏠</div>
-        <h3>Seguro de hogar</h3>
-        <p>
-          Protegé tu vivienda y tus bienes con alternativas pensadas
-          para tus necesidades.
-        </p>
-      </div>
+      <fieldset class="quote-step" data-step="2"><legend id="riskLegend">Datos para seguro automotor</legend><p class="field-intro">No ingreses cédula ni adjuntes documentos. Un asesor los pedirá más adelante si fueran necesarios.</p><div class="form-grid two-columns risk-fields" id="riskFields"></div><div class="wizard-actions"><button class="button button-ghost" type="button" data-prev="1">Volver</button><button class="button button-primary" type="button" data-next="3">Datos de contacto →</button></div></fieldset>
 
-      <div class="card">
-        <div class="icon">❤️</div>
-        <h3>Seguro de vida y ahorro</h3>
-        <p>
-          Soluciones para proteger a tu familia y planificar objetivos
-          a futuro.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🔑</div>
-        <h3>Garantía de alquiler</h3>
-        <p>
-          Alternativas para respaldar contratos de alquiler de forma
-          simple y profesional.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🛡️</div>
-        <h3>Asesoramiento integral</h3>
-        <p>
-          Te ayudamos a elegir y revisar tus seguros para evitar pagar
-          de más o quedar mal cubierto.
-        </p>
-      </div>
-
-    </div>
+      <fieldset class="quote-step" data-step="3"><legend>¿Cómo te contactamos?</legend><p class="field-intro">Al enviar, abrimos WhatsApp con el resumen listo para compartir.</p><div class="form-grid two-columns">
+        <label>Nombre y apellido <span aria-label="obligatorio">*</span><input name="fullName" type="text" autocomplete="name" required minlength="3" placeholder="Ej.: Juan Pérez"></label>
+        <label>Celular / WhatsApp <span aria-label="obligatorio">*</span><input name="phone" type="tel" autocomplete="tel" required minlength="8" placeholder="Ej.: 099 123 456"></label>
+        <label>Email <small>opcional</small><input name="email" type="email" autocomplete="email" placeholder="nombre@email.com"></label>
+        <label>Preferencia de respuesta<select name="responsePreference"><option value="WhatsApp">WhatsApp</option><option value="Llamada">Llamada</option><option value="Email">Email</option><option value="Indistinto">Indistinto</option></select></label>
+      </div><input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true"><label class="consent-row"><input name="consent" type="checkbox" required><span>Autorizo a SGM Seguros a usar estos datos para responder y dar seguimiento a esta solicitud. <a href="#privacidad">Ver uso de datos</a>.</span></label><div class="wizard-actions"><button class="button button-ghost" type="button" data-prev="2">Volver</button><button class="button button-primary" type="submit">Solicitar cotización →</button></div><p class="mini-note">La referencia se incluirá en el mensaje de WhatsApp para facilitar el seguimiento.</p></fieldset>
+    </form>
   </div>
 </section>
 
-<section class="section band" id="nosotros">
-  <div class="container">
+<section class="section trust-section" id="confianza"><div class="trust-copy"><p class="eyebrow">Por qué SGM</p><h2>Una relación comercial basada en acompañamiento.</h2><p>La tecnología ordena el primer contacto; el asesoramiento sigue siendo humano. La web no reemplaza la evaluación profesional ni promete coberturas o precios sin validación.</p></div><div class="trust-list"><div><strong>01</strong><span>Atención directa y personalizada.</span></div><div><strong>02</strong><span>Alternativas de distintas compañías.</span></div><div><strong>03</strong><span>Seguimiento antes y después de contratar.</span></div><div><strong>04</strong><span>Atención en Montevideo y todo Uruguay.</span></div></div></section>
 
-    <h2>¿Por qué SGM Seguros?</h2>
+<section class="section privacy-note" id="privacidad"><div><p class="eyebrow">Privacidad</p><h2>Pedimos solo lo necesario.</h2></div><p>Los formularios solicitan datos de contacto y datos básicos del riesgo para responder la consulta. No pedimos cédula, libreta de propiedad ni documentación sensible desde esta web. Al continuar, la información se incluye en un mensaje de WhatsApp dirigido a SGM Seguros.</p></section>
+</main>
 
-    <p class="muted">
-      No se trata solamente de vender una póliza. Nuestro objetivo es que
-      tengas un asesor que conozca tus necesidades y te acompañe cuando
-      realmente lo necesitás.
-    </p>
+<footer><div class="footer-brand"><span class="brand-mark">SGM</span><div><strong>SGM Seguros Uruguay</strong><p>Asesoramiento en seguros para personas, familias y proyectos.</p></div></div><div class="footer-contact"><a href="tel:+59898907603">098 907 603</a><a href="mailto:SGM.gonzalomartinez@gmail.com">SGM.gonzalomartinez@gmail.com</a><span>Montevideo · Atención a todo Uruguay</span></div><div class="footer-bottom"><span>© 2026 SGM Seguros</span><span>Automotor · Hogar · Vida · Viaje · Garantía de alquiler</span></div></footer>
+<a class="floating-whatsapp" href="https://wa.me/59898907603?text=Hola%20SGM%20Seguros%2C%20necesito%20asesoramiento." target="_blank" rel="noopener" aria-label="Hablar con SGM Seguros por WhatsApp">WA</a>
 
-    <div class="grid">
+<script>
+const WA_NUMBER='59898907603';
+const labels={automotor:'Seguro automotor',hogar:'Seguro de hogar',viaje:'Seguro de viaje / asistencia internacional',vida:'Seguro de vida y ahorro',alquiler:'Garantía de alquiler',otro:'Otro asunto'};
+const departments=['Artigas','Canelones','Cerro Largo','Colonia','Durazno','Flores','Florida','Lavalleja','Maldonado','Montevideo','Paysandú','Río Negro','Rivera','Rocha','Salto','San José','Soriano','Tacuarembó','Treinta y Tres'];
+const detailLabels={marca:'Marca',modelo:'Modelo',anio:'Año',uso:'Uso',departamento:'Departamento',coberturaActual:'Seguro actual',localidad:'Localidad',tipoVivienda:'Tipo de vivienda',condicion:'Relación con la vivienda',superficie:'Superficie aproximada',destino:'Destino',fechaSalida:'Salida',fechaRegreso:'Regreso',viajeros:'Cantidad de viajeros',edades:'Edades',edad:'Edad',objetivo:'Objetivo principal',capitalOrientativo:'Capital orientativo',tipoInmueble:'Tipo de inmueble',alquilerEstimado:'Alquiler estimado',situacionLaboral:'Situación laboral',cantidadSolicitantes:'Solicitantes'};
+function waUrl(message){return 'https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(message)}
+function reference(){const d=new Date();const y=d.getFullYear();const m=String(d.getMonth()+1).padStart(2,'0');const day=String(d.getDate()).padStart(2,'0');const code=Math.random().toString(36).slice(2,6).toUpperCase();return `SGM-${y}${m}${day}-${code}`}
+function origin(){const p=new URLSearchParams(location.search);return ['web',p.get('utm_source')||'organico',p.get('utm_campaign')].filter(Boolean).join('-').slice(0,80)}
+const tabQuick=document.getElementById('tabQuick'),tabQuote=document.getElementById('tabQuote'),quickPanel=document.getElementById('quickPanel'),quotePanel=document.getElementById('quotePanel');
+function showJourney(which){const q=which==='quick';quickPanel.hidden=!q;quotePanel.hidden=q;tabQuick.classList.toggle('active',q);tabQuote.classList.toggle('active',!q);tabQuick.setAttribute('aria-selected',q?'true':'false');tabQuote.setAttribute('aria-selected',q?'false':'true');}
+tabQuick.addEventListener('click',()=>showJourney('quick'));tabQuote.addEventListener('click',()=>showJourney('quote'));
+document.querySelectorAll('[data-prefill]').forEach(a=>a.addEventListener('click',()=>{showJourney('quote');const v=a.dataset.prefill;const r=document.querySelector(`input[name="quoteType"][value="${v}"]`);if(r){r.checked=true;renderRiskFields();showQuoteStep(1)}}));
 
-      <div class="card" style="background:#202020;border-color:#333">
-        <h3>Asesoramiento personalizado</h3>
-        <p class="muted">
-          Una atención cercana y directa.
-        </p>
-      </div>
+document.getElementById('quickForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);if(d.get('website'))return;const ref=reference();const msg=['Hola SGM Seguros. Quiero realizar una consulta.',`Referencia: ${ref}`,`Nombre: ${String(d.get('fullName')).trim()}`,`Teléfono: ${String(d.get('phone')).trim()}`,`Interés: ${labels[d.get('insuranceType')]||'Otro asunto'}`,d.get('email')?`Email: ${String(d.get('email')).trim()}`:'',d.get('message')?`Consulta: ${String(d.get('message')).trim()}`:'',`Origen: ${origin()}`].filter(Boolean).join('\n');location.href=waUrl(msg)});
 
-      <div class="card" style="background:#202020;border-color:#333">
-        <h3>Varias compañías</h3>
-        <p class="muted">
-          Buscamos alternativas dentro del mercado.
-        </p>
-      </div>
-
-      <div class="card" style="background:#202020;border-color:#333">
-        <h3>Atención en Uruguay</h3>
-        <p class="muted">
-          Coberturas y soluciones para clientes de todo el país.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contacto">
-  <div class="container contact">
-
-    <div>
-      <h2>Hablemos de tu seguro</h2>
-
-      <p class="muted">
-        Contanos qué necesitás y te orientamos sin compromiso.
-      </p>
-    </div>
-
-    <div class="contactbox">
-
-      <strong>SGM Seguros</strong>
-
-      <p>📱 WhatsApp: 098 907 603</p>
-
-      <p>✉️ SGM.gonzalomartinez@gmail.com</p>
-
-      <p>📍 Montevideo, Uruguay</p>
-
-      <a class="btn primary"
-         href="https://wa.me/59898907603?text=Hola%20SGM%20Seguros%2C%20quiero%20una%20cotizaci%C3%B3n."
-         target="_blank">
-         Solicitar cotización
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div>© 2026 SGM Seguros</div>
-    <div>
-      Seguro automotor · Vehículos · Hogar · Vida · Seguro de viaje ·
-      Asistencia al viajero · Garantía de alquiler
-    </div>
-  </div>
-</footer>
-
+let quoteStep=1;
+function showQuoteStep(step){quoteStep=step;document.querySelectorAll('.quote-step').forEach(el=>el.classList.toggle('active',Number(el.dataset.step)===step));document.querySelectorAll('#progressList>div').forEach((el,i)=>el.classList.toggle('complete',step>=i+1));}
+function currentType(){return document.querySelector('input[name="quoteType"]:checked').value}
+function fieldInput(key,label,placeholder,type='text',required=true){return `<label>${label}${required?' <span aria-label="obligatorio">*</span>':' <small>opcional</small>'}<input data-detail="${key}" type="${type}" ${required?'required':''} placeholder="${placeholder}"></label>`}
+function fieldSelect(key,label,options,required=true){return `<label>${label}${required?' <span aria-label="obligatorio">*</span>':' <small>opcional</small>'}<select data-detail="${key}" ${required?'required':''}><option value="" disabled selected>Seleccioná una opción</option>${options.map(o=>`<option value="${o}">${o}</option>`).join('')}</select></label>`}
+function renderRiskFields(){const t=currentType(),box=document.getElementById('riskFields');document.getElementById('riskLegend').textContent='Datos para '+labels[t].toLowerCase();let h='';if(t==='automotor'){h=fieldInput('marca','Marca','Ej.: Chevrolet')+fieldInput('modelo','Modelo','Ej.: Onix')+fieldInput('anio','Año','Ej.: 2022','number')+fieldSelect('uso','Uso principal',['Particular','Comercial','Trabajo / reparto','Otro'])+fieldSelect('departamento','Departamento',departments)+fieldSelect('coberturaActual','¿Tiene seguro actualmente?',['Sí','No','No estoy seguro'],false)}else if(t==='hogar'){h=fieldSelect('tipoVivienda','Tipo de vivienda',['Casa','Apartamento','Local','Otro'])+fieldSelect('condicion','Relación con la vivienda',['Propietario/a','Inquilino/a','Otra'])+fieldSelect('departamento','Departamento',departments)+fieldInput('localidad','Localidad o barrio','Ej.: Pocitos')+fieldInput('superficie','Superficie aproximada','Ej.: 80 m²','text',false)+fieldSelect('uso','Uso',['Vivienda permanente','Vivienda temporal','Alquiler','Otro'])}else if(t==='viaje'){h=fieldInput('destino','Destino','Ej.: España')+fieldInput('viajeros','Cantidad de viajeros','Ej.: 2','number')+fieldInput('fechaSalida','Fecha de salida','','date')+fieldInput('fechaRegreso','Fecha de regreso','','date')+`<div class="span-two">${fieldInput('edades','Edades de los viajeros','Ej.: 35 y 32')}</div>`}else if(t==='vida'){h=fieldInput('edad','Edad','Ej.: 38','number')+fieldSelect('objetivo','Objetivo principal',['Protección familiar','Ahorro','Respaldo de ingresos','Quiero asesoramiento'])+`<div class="span-two">${fieldInput('capitalOrientativo','Capital o aporte orientativo','Opcional','text',false)}</div>`}else{h=fieldSelect('tipoInmueble','Tipo de inmueble',['Vivienda','Local comercial','Otro'])+fieldSelect('departamento','Departamento',departments)+fieldInput('alquilerEstimado','Alquiler mensual estimado','Ej.: $ 28.000')+fieldSelect('situacionLaboral','Situación laboral',['Dependiente','Independiente','Jubilado/a','Otra'])+fieldInput('cantidadSolicitantes','Cantidad de solicitantes','Ej.: 1','number')}box.innerHTML=h}
+document.querySelectorAll('input[name="quoteType"]').forEach(r=>r.addEventListener('change',renderRiskFields));renderRiskFields();
+document.querySelectorAll('[data-next]').forEach(btn=>btn.addEventListener('click',()=>{const target=Number(btn.dataset.next);if(target===3){const fields=[...document.querySelectorAll('#riskFields input[required],#riskFields select[required]')];if(!fields.every(f=>f.reportValidity()))return;}showQuoteStep(target)}));
+document.querySelectorAll('[data-prev]').forEach(btn=>btn.addEventListener('click',()=>showQuoteStep(Number(btn.dataset.prev))));
+document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);if(d.get('website'))return;const details=[...document.querySelectorAll('#riskFields [data-detail]')].filter(el=>String(el.value).trim()).map(el=>`${detailLabels[el.dataset.detail]||el.dataset.detail}: ${String(el.value).trim()}`);const ref=reference(),t=currentType();const msg=['SOLICITUD DE COTIZACIÓN SGM',`Referencia: ${ref}`,`Nombre: ${String(d.get('fullName')).trim()}`,`Teléfono: ${String(d.get('phone')).trim()}`,d.get('email')?`Email: ${String(d.get('email')).trim()}`:'',`Seguro: ${labels[t]}`,...details,`Respuesta preferida: ${d.get('responsePreference')}`,`Origen: ${origin()}`].filter(Boolean).join('\n');location.href=waUrl(msg)});
+</script>
 </body>
 </html>

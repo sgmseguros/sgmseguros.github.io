@@ -160,6 +160,10 @@ svg {
   color: var(--white);
 }
 
+.label-mobile {
+  display: none;
+}
+
 .hero,
 .section,
 footer {
@@ -1145,50 +1149,88 @@ footer {
 
 @media (max-width: 760px) {
   .site-header {
-    min-height: 68px;
-    padding-inline: 18px;
+    min-height: 62px;
+    padding-inline: 16px;
   }
 
-  .brand-name {
+  .brand-name,
+  .label-desktop {
     display: none;
   }
 
+  .label-mobile {
+    display: inline;
+  }
+
   .header-action {
-    padding: 9px 13px;
+    min-height: 38px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--white);
     font-size: 0.76rem;
   }
 
   .hero,
   .section,
   footer {
-    width: min(100% - 32px, 1240px);
+    width: min(100% - 28px, 1240px);
   }
 
   .hero {
-    gap: 48px;
-    padding-block: 64px;
+    gap: 24px;
+    padding-block: 38px 48px;
   }
 
   .hero h1 {
-    font-size: clamp(3rem, 14vw, 4.4rem);
+    font-size: clamp(2.75rem, 13vw, 4.15rem);
+    line-height: 0.96;
   }
 
-  .hero-actions,
-  .hero-actions .button {
-    width: 100%;
+  .hero-lead {
+    margin-top: 22px;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* En celular las dos decisiones del embudo reemplazan los CTA genéricos. */
+  .hero-actions {
+    display: none;
   }
 
   .hero-proof {
-    display: grid;
+    display: flex;
+    gap: 8px 14px;
+    margin-top: 24px;
+    font-size: 0.75rem;
+  }
+
+  .hero-proof li:last-child {
+    display: none;
   }
 
   .hero-panel {
-    padding: 24px;
+    display: grid;
+    gap: 10px;
+    max-width: none;
+    padding: 12px;
+    border-radius: 18px;
+    box-shadow: 0 16px 38px rgba(20, 21, 23, 0.16);
+  }
+
+  .hero-panel::before,
+  .panel-kicker,
+  .route-connector,
+  .panel-result {
+    display: none;
   }
 
   .route-preview {
-    grid-template-columns: 42px 1fr;
-    padding: 17px;
+    grid-template-columns: 42px 1fr auto;
+    gap: 13px;
+    min-height: 78px;
+    padding: 13px 14px;
+    border-radius: 12px;
   }
 
   .route-preview > span {
@@ -1196,77 +1238,173 @@ footer {
     height: 42px;
   }
 
-  .route-connector {
-    margin-left: 38px;
+  .route-preview::after {
+    width: 30px;
+    height: 30px;
+  }
+
+  .route-preview strong {
+    font-size: 0.98rem;
+  }
+
+  .route-preview p {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    line-height: 1.35;
   }
 
   .section {
-    padding-block: 76px;
+    padding-block: 60px;
   }
 
   .section-heading,
-  .route-principles,
   .privacy-note {
     grid-template-columns: 1fr;
   }
 
   .section-heading {
-    gap: 25px;
-    margin-bottom: 34px;
+    gap: 16px;
+    margin-bottom: 26px;
   }
 
+  .section h2 {
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
+  }
+
+  /* Las coberturas pasan a carrusel táctil para evitar una página excesivamente larga. */
   .service-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 12px;
+    margin-right: -14px;
+    padding: 2px 14px 16px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+  }
+
+  .service-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .service-card,
   .service-card:nth-child(4),
   .service-card:last-child {
+    flex: 0 0 min(82vw, 330px);
     grid-column: auto;
-    min-height: 270px;
+    min-height: 245px;
+    padding: 23px;
+    scroll-snap-align: start;
   }
 
+  .service-number {
+    margin-bottom: 30px;
+  }
+
+  /* Esta explicación es útil en escritorio pero duplica el recorrido en móvil. */
   .route-intro {
-    gap: 34px;
-  }
-
-  .route-principles {
-    gap: 12px;
-  }
-
-  .route-principles article {
-    min-height: 235px;
-  }
-
-  .route-principles h3 {
-    margin-top: 45px;
+    display: none;
   }
 
   .lead-section {
     width: 100%;
-    padding: 76px 16px;
+    padding: 52px 14px 62px;
+    scroll-margin-top: 62px;
+  }
+
+  .lead-heading {
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .lead-heading .eyebrow {
+    margin-bottom: 0;
+  }
+
+  .lead-heading > p:last-child {
+    display: none;
+  }
+
+  .lead-heading h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
   }
 
   .journey-switch {
-    grid-template-columns: 1fr;
+    position: sticky;
+    top: 62px;
+    z-index: 12;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 13px 13px 0 0;
+    box-shadow: 0 8px 24px rgba(20, 21, 23, 0.08);
+  }
+
+  .journey-switch button {
+    grid-template-columns: auto 1fr;
+    gap: 9px;
+    min-height: 60px;
+    padding: 11px 12px;
   }
 
   .journey-switch button + button {
-    border-top: 1px solid var(--line);
-    border-left: 0;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .journey-switch button small {
+    display: none;
+  }
+
+  .journey-switch button strong {
+    font-size: 0.82rem;
   }
 
   .form-shell {
     grid-template-columns: 1fr;
+    scroll-margin-top: 130px;
+    border-radius: 0 0 14px 14px;
   }
 
-  .form-number {
-    margin-bottom: 32px;
+  /* La consulta rápida entra directo al formulario en teléfono. */
+  #quickPanel .form-aside {
+    display: none;
+  }
+
+  /* En cotización conservamos solo un progreso compacto. */
+  #quotePanel .quote-aside {
+    padding: 12px 14px;
+  }
+
+  #quotePanel .quote-aside > .form-number,
+  #quotePanel .quote-aside > h3,
+  #quotePanel .quote-aside > p {
+    display: none;
+  }
+
+  #quotePanel .progress-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 0;
+  }
+
+  #quotePanel .progress-list > div {
+    grid-template-columns: 22px 1fr;
+    gap: 5px;
+    font-size: 0.63rem;
+    line-height: 1.15;
+  }
+
+  #quotePanel .progress-list span {
+    width: 22px;
+    height: 22px;
+    font-size: 0.58rem;
   }
 
   .lead-form {
-    padding: 28px 20px;
+    padding: 24px 17px 26px;
+  }
+
+  .form-grid {
+    gap: 17px;
   }
 
   .two-columns {
@@ -1277,28 +1415,53 @@ footer {
     grid-column: auto;
   }
 
-  .wizard-actions {
-    flex-direction: column-reverse;
+  .quote-form legend {
+    font-size: clamp(1.65rem, 8vw, 2.15rem);
   }
 
-  .wizard-actions .button {
+  .field-intro {
+    margin: 9px 0 20px;
+  }
+
+  .insurance-options label > span {
+    min-height: 56px;
+    padding: 12px 14px;
+  }
+
+  .wizard-actions {
+    flex-direction: column-reverse;
+    margin-top: 22px;
+  }
+
+  .wizard-actions .button,
+  .submit-button {
     width: 100%;
+    min-height: 52px;
   }
 
   .trust-section {
-    gap: 38px;
+    gap: 28px;
+  }
+
+  .trust-copy > p:last-child {
+    margin-top: 16px;
+    font-size: 0.9rem;
+  }
+
+  .trust-list > div {
+    min-height: 68px;
   }
 
   .privacy-note {
-    gap: 24px;
-    padding: 36px 24px;
+    gap: 18px;
+    padding: 30px 21px;
   }
 
   footer {
     grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 76px;
-    padding: 40px 24px 28px;
+    gap: 28px;
+    margin-top: 60px;
+    padding: 34px 22px 26px;
   }
 
   .footer-contact {
@@ -1307,12 +1470,26 @@ footer {
 
   .footer-bottom {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
+  /* Acceso directo persistente, legible y táctil en celular. */
   .floating-whatsapp {
-    right: 16px;
-    bottom: 16px;
+    right: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    display: flex;
+    gap: 7px;
+    width: auto;
+    height: 48px;
+    padding: 0 16px;
+    border-width: 3px;
+    border-radius: 999px;
+  }
+
+  .floating-whatsapp::after {
+    content: "WhatsApp";
+    font-size: 0.75rem;
+    letter-spacing: 0;
   }
 }
 
@@ -1336,7 +1513,7 @@ footer {
 <header class="site-header">
   <a class="brand" href="#inicio" aria-label="SGM Seguros - Inicio"><span class="brand-mark">SGM</span><span class="brand-name">Seguros</span></a>
   <nav aria-label="Navegación principal"><a href="#seguros">Seguros</a><a href="#como-funciona">Cómo funciona</a><a href="#elegi-tu-recorrido">Cotizar</a><a href="#confianza">Por qué SGM</a></nav>
-  <a class="header-action" href="#elegi-tu-recorrido">Consultar / Cotizar</a>
+  <a class="header-action" href="#elegi-tu-recorrido"><span class="label-desktop">Consultar / Cotizar</span><span class="label-mobile">Cotizar</span></a>
 </header>
 
 <main>
@@ -1440,10 +1617,13 @@ function waUrl(message){return 'https://wa.me/'+WA_NUMBER+'?text='+encodeURIComp
 function reference(){const d=new Date();const y=d.getFullYear();const m=String(d.getMonth()+1).padStart(2,'0');const day=String(d.getDate()).padStart(2,'0');const code=Math.random().toString(36).slice(2,6).toUpperCase();return `SGM-${y}${m}${day}-${code}`}
 function origin(){const p=new URLSearchParams(location.search);return ['web',p.get('utm_source')||'organico',p.get('utm_campaign')].filter(Boolean).join('-').slice(0,80)}
 const tabQuick=document.getElementById('tabQuick'),tabQuote=document.getElementById('tabQuote'),quickPanel=document.getElementById('quickPanel'),quotePanel=document.getElementById('quotePanel');
+const mobileLayout=window.matchMedia('(max-width: 760px)');
 function showJourney(which){const q=which==='quick';quickPanel.hidden=!q;quotePanel.hidden=q;tabQuick.classList.toggle('active',q);tabQuote.classList.toggle('active',!q);tabQuick.setAttribute('aria-selected',q?'true':'false');tabQuote.setAttribute('aria-selected',q?'false':'true');}
+function journeyTarget(which){return mobileLayout.matches?(which==='quick'?quickPanel:quotePanel):document.getElementById('elegi-tu-recorrido')}
+function scrollToJourney(which){journeyTarget(which).scrollIntoView({behavior:'smooth',block:'start'})}
 tabQuick.addEventListener('click',()=>showJourney('quick'));tabQuote.addEventListener('click',()=>showJourney('quote'));
-document.querySelectorAll('[data-journey]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const which=a.dataset.journey==='quote'?'quote':'quick';showJourney(which);if(which==='quote')showQuoteStep(1);document.getElementById('elegi-tu-recorrido').scrollIntoView({behavior:'smooth',block:'start'});window.setTimeout(()=>{const target=which==='quick'?document.querySelector('#quickForm input[name="fullName"]'):document.querySelector('#quoteOptions input[name="quoteType"]');if(target)target.focus({preventScroll:true})},500)}));
-document.querySelectorAll('[data-prefill]').forEach(a=>a.addEventListener('click',()=>{showJourney('quote');const v=a.dataset.prefill;const r=document.querySelector(`input[name="quoteType"][value="${v}"]`);if(r){r.checked=true;renderRiskFields();showQuoteStep(1)}}));
+document.querySelectorAll('[data-journey]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const which=a.dataset.journey==='quote'?'quote':'quick';showJourney(which);if(which==='quote')showQuoteStep(1);scrollToJourney(which);window.setTimeout(()=>{const target=which==='quick'?document.querySelector('#quickForm input[name="fullName"]'):document.querySelector('#quoteOptions input[name="quoteType"]');if(target)target.focus({preventScroll:true})},500)}));
+document.querySelectorAll('[data-prefill]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showJourney('quote');const v=a.dataset.prefill;const r=document.querySelector(`input[name="quoteType"][value="${v}"]`);if(r){r.checked=true;renderRiskFields();showQuoteStep(1)}scrollToJourney('quote')}));
 
 document.getElementById('quickForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);if(d.get('website'))return;const ref=reference();const msg=['Hola SGM Seguros. Quiero realizar una consulta.',`Referencia: ${ref}`,`Nombre: ${String(d.get('fullName')).trim()}`,`Teléfono: ${String(d.get('phone')).trim()}`,`Interés: ${labels[d.get('insuranceType')]||'Otro asunto'}`,d.get('email')?`Email: ${String(d.get('email')).trim()}`:'',d.get('message')?`Consulta: ${String(d.get('message')).trim()}`:'',`Origen: ${origin()}`].filter(Boolean).join('\n');location.href=waUrl(msg)});
 

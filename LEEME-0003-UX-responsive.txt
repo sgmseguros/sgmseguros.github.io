@@ -1,0 +1,48 @@
+SGM SEGUROS — PARCHE 0003
+UX diferenciada para escritorio y celular
+
+Este parche modifica únicamente index.html.
+
+CAMBIOS PRINCIPALES
+
+ESCRITORIO
+- Conserva la experiencia amplia actual.
+- Mantiene navegación completa, hero en dos columnas, grilla de coberturas y formularios con panel explicativo.
+
+CELULAR
+- Encabezado más compacto.
+- El CTA superior pasa a mostrar “Cotizar”.
+- Se eliminan llamados a la acción duplicados del hero.
+- Consulta rápida y Cotización guiada se convierten en las dos acciones principales visibles.
+- Se ocultan explicaciones repetidas para reducir ruido visual.
+- Coberturas pasan a un carrusel horizontal táctil.
+- Consulta rápida entra directamente al formulario.
+- Cotización guiada mantiene un progreso compacto de 3 pasos.
+- Selector Consulta/Cotización queda compacto y visible durante la entrevista.
+- WhatsApp pasa de círculo “WA” a botón tipo píldora legible.
+- Los clics del embudo desplazan al usuario al formulario correcto según el tamaño de pantalla.
+
+APLICAR
+
+1. Extraer este ZIP dentro de:
+C:\Users\Gonzalo\OneDrive\Escritorio\sgm-seguros-web-completo
+
+2. En CMD, dentro de esa carpeta:
+git apply --check "0003-UX-responsive-escritorio-movil.patch"
+
+3. Si no muestra errores:
+git apply "0003-UX-responsive-escritorio-movil.patch"
+
+4. Comprobar:
+git status
+
+Debe indicar:
+modified: index.html
+
+5. Probar localmente:
+start index.html
+
+6. Si todo funciona correctamente:
+PUBLICAR_WEB.bat
+
+No vuelvas a aplicar el parche una segunda vez.

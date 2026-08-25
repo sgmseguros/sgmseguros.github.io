@@ -321,13 +321,51 @@ footer {
 .route-preview {
   position: relative;
   display: grid;
-  grid-template-columns: 52px 1fr;
+  grid-template-columns: 52px 1fr auto;
   gap: 18px;
   align-items: center;
+  width: 100%;
   padding: 22px;
   border: 1px solid #3a3c42;
   border-radius: 14px;
   background: #202226;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.route-preview:hover,
+.route-preview:focus-visible {
+  transform: translateY(-2px);
+  border-color: #666971;
+  background: #26282d;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .18);
+}
+
+.route-preview:focus-visible {
+  outline: 3px solid rgba(217, 31, 43, .38);
+  outline-offset: 3px;
+}
+
+.route-preview::after {
+  content: '→';
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 900;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.route-preview:hover::after,
+.route-preview:focus-visible::after {
+  transform: translateX(3px);
+  background: rgba(255,255,255,.14);
 }
 
 .route-preview > span {
@@ -1315,9 +1353,9 @@ footer {
   </div>
   <aside class="hero-panel" aria-label="Dos recorridos comerciales">
     <p class="panel-kicker">Un mismo objetivo · dos recorridos</p>
-    <div class="route-preview"><span>01</span><div><strong>Consulta rápida</strong><p>Datos mínimos y contacto directo por WhatsApp.</p></div></div>
+    <a class="route-preview" href="#elegi-tu-recorrido" data-journey="quick" aria-label="Iniciar consulta rápida"><span>01</span><div><strong>Consulta rápida</strong><p>Datos mínimos y contacto directo por WhatsApp.</p></div></a>
     <div class="route-connector"></div>
-    <div class="route-preview route-preview-quote"><span>02</span><div><strong>Cotización guiada</strong><p>Preguntas adaptadas al seguro que querés cotizar.</p></div></div>
+    <a class="route-preview route-preview-quote" href="#elegi-tu-recorrido" data-journey="quote" aria-label="Iniciar cotización guiada"><span>02</span><div><strong>Cotización guiada</strong><p>Preguntas adaptadas al seguro que querés cotizar.</p></div></a>
     <div class="panel-result"><span>Resultado</span><strong>Una conversación comercial más clara, con la información necesaria desde el inicio.</strong></div>
   </aside>
 </section>
@@ -1404,6 +1442,7 @@ function origin(){const p=new URLSearchParams(location.search);return ['web',p.g
 const tabQuick=document.getElementById('tabQuick'),tabQuote=document.getElementById('tabQuote'),quickPanel=document.getElementById('quickPanel'),quotePanel=document.getElementById('quotePanel');
 function showJourney(which){const q=which==='quick';quickPanel.hidden=!q;quotePanel.hidden=q;tabQuick.classList.toggle('active',q);tabQuote.classList.toggle('active',!q);tabQuick.setAttribute('aria-selected',q?'true':'false');tabQuote.setAttribute('aria-selected',q?'false':'true');}
 tabQuick.addEventListener('click',()=>showJourney('quick'));tabQuote.addEventListener('click',()=>showJourney('quote'));
+document.querySelectorAll('[data-journey]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const which=a.dataset.journey==='quote'?'quote':'quick';showJourney(which);if(which==='quote')showQuoteStep(1);document.getElementById('elegi-tu-recorrido').scrollIntoView({behavior:'smooth',block:'start'});window.setTimeout(()=>{const target=which==='quick'?document.querySelector('#quickForm input[name="fullName"]'):document.querySelector('#quoteOptions input[name="quoteType"]');if(target)target.focus({preventScroll:true})},500)}));
 document.querySelectorAll('[data-prefill]').forEach(a=>a.addEventListener('click',()=>{showJourney('quote');const v=a.dataset.prefill;const r=document.querySelector(`input[name="quoteType"][value="${v}"]`);if(r){r.checked=true;renderRiskFields();showQuoteStep(1)}}));
 
 document.getElementById('quickForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);if(d.get('website'))return;const ref=reference();const msg=['Hola SGM Seguros. Quiero realizar una consulta.',`Referencia: ${ref}`,`Nombre: ${String(d.get('fullName')).trim()}`,`Teléfono: ${String(d.get('phone')).trim()}`,`Interés: ${labels[d.get('insuranceType')]||'Otro asunto'}`,d.get('email')?`Email: ${String(d.get('email')).trim()}`:'',d.get('message')?`Consulta: ${String(d.get('message')).trim()}`:'',`Origen: ${origin()}`].filter(Boolean).join('\n');location.href=waUrl(msg)});

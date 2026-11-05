@@ -861,7 +861,7 @@ footer {
   margin-top: 32px;
 }
 
-.progress-list > div {
+.progress-list > button {
   display: grid;
   grid-template-columns: 28px 1fr;
   gap: 10px;
@@ -1508,135 +1508,119 @@ footer {
 [hidden]{display:none!important}.quote-step{display:none}.quote-step.active{display:block}.mini-note{margin-top:14px;color:var(--muted);font-size:.76rem;line-height:1.55}.status-note{margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fafafa;color:var(--muted);font-size:.78rem}.quote-type-title{display:block}.department-select{min-width:0}
 
 </style>
+<link rel="stylesheet" href="assets/sgm-web.css?v=20261105-6">
+<link rel="icon" type="image/png" href="assets/sgm-icon.png">
+<meta property="og:image" content="https://sgmseguros.github.io/assets/sgm-logo.png">
+<meta property="og:image:alt" content="SGM Seguros Uruguay">
 </head>
 <body>
+<a class="skip-link" href="#inicio">Ir al contenido</a>
 <header class="site-header">
-  <a class="brand" href="#inicio" aria-label="SGM Seguros - Inicio"><span class="brand-mark">SGM</span><span class="brand-name">Seguros</span></a>
-  <nav aria-label="Navegación principal"><a href="#seguros">Seguros</a><a href="#como-funciona">Cómo funciona</a><a href="#elegi-tu-recorrido">Cotizar</a><a href="#confianza">Por qué SGM</a></nav>
+  <a class="brand" href="#inicio" aria-label="SGM Seguros - Inicio"><img class="brand-logo" src="assets/sgm-logo.png" alt="SGM Seguros" width="126" height="53"><span class="brand-name">Asesoramiento<br>en seguros · Uruguay</span></a>
+  <nav id="siteNav" aria-label="Navegación principal"><a href="#seguros">Seguros</a><a href="#como-funciona">Cómo funciona</a><a href="#elegi-tu-recorrido">Cotizar</a><a href="#confianza">Quiénes somos</a><a class="portal-nav" href="https://sgm-consulta.pages.dev/?portal=access" target="_blank" rel="noopener noreferrer">Portal de clientes ↗</a></nav>
+  <button id="mobileMenu" class="mobile-menu-button" type="button" aria-label="Abrir menú" aria-controls="siteNav" aria-expanded="false">☰</button>
   <a class="header-action" href="#elegi-tu-recorrido"><span class="label-desktop">Consultar / Cotizar</span><span class="label-mobile">Cotizar</span></a>
 </header>
 
-<main>
+<main><aside id="deliveryNotice" class="delivery-preview-note">Vista previa · el envío directo está pendiente de habilitación y comprobación. Esta versión no enviará datos.</aside>
 <section class="hero" id="inicio">
   <div>
     <p class="eyebrow">SGM Seguros · Uruguay</p>
-    <h1>Elegí tu seguro con <span>asesoramiento directo.</span></h1>
-    <p class="hero-lead">Te ayudamos a comparar alternativas y avanzar de dos formas: una consulta rápida para resolver una duda o una cotización guiada para adelantar la información clave.</p>
+    <h1>Elegí tu seguro.<span>Te acompañamos en cada paso.</span></h1>
+    <p class="hero-lead">Para tu auto, tu casa, tu familia o tu empresa. Contanos qué necesitás y te ayudamos a encontrar una alternativa adecuada, con atención directa y seguimiento.</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="#elegi-tu-recorrido">Empezar ahora →</a>
+      <a class="button button-primary" href="#elegi-tu-recorrido" data-journey="quote">Preparar mi cotización →</a>
       <a class="button button-ghost" href="https://wa.me/59898907603?text=Hola%20SGM%20Seguros%2C%20quiero%20asesorarme%20sobre%20un%20seguro." target="_blank" rel="noopener">Hablar por WhatsApp</a>
     </div>
     <ul class="hero-proof"><li>✓ Atención en todo Uruguay</li><li>✓ Más de 10 años de experiencia</li><li>✓ Acompañamiento personalizado</li></ul>
   </div>
-  <aside class="hero-panel" aria-label="Dos recorridos comerciales">
-    <p class="panel-kicker">Un mismo objetivo · dos recorridos</p>
-    <a class="route-preview" href="#elegi-tu-recorrido" data-journey="quick" aria-label="Iniciar consulta rápida"><span>01</span><div><strong>Consulta rápida</strong><p>Datos mínimos y contacto directo por WhatsApp.</p></div></a>
+  <aside class="hero-panel" aria-label="Elegí cómo podemos ayudarte">
+    <p class="panel-kicker">TU SEGURO, CON ASESORAMIENTO PERSONAL</p>
+    <a class="route-preview" href="#elegi-tu-recorrido" data-journey="quick" aria-label="Iniciar consulta rápida"><span>01</span><div><strong>Consulta rápida</strong><p>Contanos tu duda. La recibimos desde esta web.</p></div></a>
     <div class="route-connector"></div>
-    <a class="route-preview route-preview-quote" href="#elegi-tu-recorrido" data-journey="quote" aria-label="Iniciar cotización guiada"><span>02</span><div><strong>Cotización guiada</strong><p>Preguntas adaptadas al seguro que querés cotizar.</p></div></a>
-    <div class="panel-result"><span>Resultado</span><strong>Una conversación comercial más clara, con la información necesaria desde el inicio.</strong></div>
+    <a class="route-preview route-preview-quote" href="#elegi-tu-recorrido" data-journey="quote" aria-label="Iniciar cotización guiada"><span>02</span><div><strong>Cotización guiada</strong><p>La información que necesitamos, en un solo lugar.</p></div></a>
+    <div class="panel-result"><span>Del primer contacto al seguimiento</span><strong>Preparamos tu solicitud, revisamos las alternativas y te acompañamos para decidir.</strong><a href="https://sgm-consulta.pages.dev/?portal=access" target="_blank" rel="noopener noreferrer">¿Ya sos cliente? Entrá a tu portal ↗</a></div>
   </aside>
 </section>
 
+<div class="company-strip"><strong>Una misma atención, de principio a fin.</strong> Consulta · Cotización · Contratación · Seguimiento</div>
+
 <section class="section services" id="seguros">
-  <div class="section-heading"><div><p class="eyebrow">Coberturas</p><h2>Protección para cada etapa.</h2></div><p>Trabajamos la consulta de cada ramo con un recorrido simple, sin pedir documentación sensible en esta primera etapa.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Coberturas</p><h2>Protección para cada etapa.</h2></div><p>Elegí qué querés proteger. Te pediremos los datos que ayudan a evaluar tu caso y preparar una propuesta para revisión.</p></div>
   <div class="service-grid">
     <article class="service-card"><span class="service-number">01</span><p>Vehículos</p><h3>Seguro automotor</h3><p>Opciones de cobertura y asesoramiento para autos y otros vehículos.</p><a href="#elegi-tu-recorrido" data-prefill="automotor">Cotizar automotor →</a></article>
     <article class="service-card"><span class="service-number">02</span><p>Propiedad</p><h3>Seguro de hogar</h3><p>Protección para vivienda, contenido y necesidades asociadas al hogar.</p><a href="#elegi-tu-recorrido" data-prefill="hogar">Cotizar hogar →</a></article>
     <article class="service-card"><span class="service-number">03</span><p>Internacional</p><h3>Viaje y asistencia</h3><p>Seguro de viaje y asistencia al viajero internacional según destino y fechas.</p><a href="#elegi-tu-recorrido" data-prefill="viaje">Cotizar viaje →</a></article>
     <article class="service-card"><span class="service-number">04</span><p>Personas</p><h3>Vida y ahorro</h3><p>Alternativas para protección familiar, respaldo de ingresos y planificación.</p><a href="#elegi-tu-recorrido" data-prefill="vida">Consultar vida →</a></article>
     <article class="service-card"><span class="service-number">05</span><p>Alquiler</p><h3>Garantía de alquiler</h3><p>Orientación para garantías de vivienda o local comercial en Uruguay.</p><a href="#elegi-tu-recorrido" data-prefill="alquiler">Solicitar garantía →</a></article>
+    <article class="service-card"><span class="service-number">06</span><p>Tu actividad</p><h3>Comercio y empresa</h3><p>Asesoramiento para el local, la mercadería, vehículos y otras necesidades de tu actividad.</p><a href="#elegi-tu-recorrido" data-prefill="comercio">Consultar para mi empresa →</a></article>
   </div>
+  <aside class="client-banner"><div><h3>¿Ya sos cliente de SGM?</h3><p>Consultá tus seguros y documentos disponibles, o solicitá una actualización de tus datos desde tu espacio personal.</p></div><a class="button" href="https://sgm-consulta.pages.dev/?portal=access" target="_blank" rel="noopener noreferrer">Entrar a mi portal ↗</a></aside>
 </section>
 
 <section class="section route-intro" id="como-funciona">
-  <div><p class="eyebrow">Cómo funciona</p><h2>Elegís cuánto querés adelantar.</h2><p class="hero-lead">No todos llegan con la misma necesidad. Por eso la web ofrece un camino corto y otro más detallado, pero ambos terminan en atención humana.</p></div>
-  <div class="route-principles"><article><span>Consulta rápida</span><h3>Cuando querés orientación.</h3><p>Nombre, teléfono, ramo y una breve consulta. Ideal para comenzar sin completar una entrevista extensa.</p></article><article><span>Cotización guiada</span><h3>Cuando ya querés cotizar.</h3><p>Seleccionás el ramo y completás datos específicos para que el contacto comercial tenga mejor contexto.</p></article></div>
+  <div><p class="eyebrow">Cómo funciona</p><h2>Vos nos contás.<br>Nosotros te asesoramos.</h2><p class="hero-lead">Podés empezar con una pregunta o adelantar los datos de tu seguro. Recibimos la información por el medio que elijas y revisamos tu solicitud personalmente.</p></div>
+  <div class="route-principles"><article><span>Consulta rápida</span><h3>Cuando querés orientación.</h3><p>Dejanos nombre, contacto y una breve consulta. Enviá tu consulta sin salir de esta página.</p></article><article><span>Cotización guiada</span><h3>Cuando ya querés cotizar.</h3><p>Te guiamos con preguntas según el seguro. La solicitud reúne tus necesidades y los datos del riesgo para preparar y revisar una cotización.</p></article></div>
 </section>
 
 <section class="section lead-section" id="elegi-tu-recorrido">
-  <div class="lead-heading"><p class="eyebrow">Empezá ahora</p><h2>¿Cómo preferís avanzar?</h2><p>Los dos caminos terminan en una conversación directa con SGM. La diferencia es cuánta información querés adelantar.</p></div>
+  <div class="lead-heading"><p class="eyebrow">Empezá ahora</p><h2>¿Cómo preferís avanzar?</h2><p>Completá tus datos y enviá la solicitud desde acá. SGM recibe la información y se comunica con vos para continuar.</p></div>
   <div class="journey-switch" role="tablist" aria-label="Tipo de gestión">
-    <button type="button" id="tabQuick" role="tab" aria-selected="true" class="active"><span>01</span><strong>Consulta rápida</strong><small>1 minuto</small></button>
-    <button type="button" id="tabQuote" role="tab" aria-selected="false"><span>02</span><strong>Cotización guiada</strong><small>3 a 5 minutos</small></button>
+    <button type="button" id="tabQuick" role="tab" aria-controls="quickPanel" aria-selected="true" class="active"><span>01</span><strong>Consulta rápida</strong><small>Quiero asesoramiento</small></button>
+    <button type="button" id="tabQuote" role="tab" aria-controls="quotePanel" aria-selected="false"><span>02</span><strong>Cotización guiada</strong><small>Ya sé qué necesito</small></button>
   </div>
 
   <div class="form-shell" id="quickPanel" role="tabpanel" aria-labelledby="tabQuick">
-    <div class="form-aside"><span class="form-number">01</span><h3>Una duda, una respuesta directa</h3><p>Dejanos los datos mínimos y abrimos WhatsApp con tu consulta ya identificada.</p><ul><li>No necesitás conocer detalles técnicos.</li><li>Elegís el seguro que te interesa.</li><li>Continuás con una persona, no con un bot.</li></ul></div>
-    <form class="lead-form" id="quickForm">
+    <div class="form-aside"><span class="form-number">01</span><h3>Una duda, una respuesta directa</h3><p>Contanos qué necesitás. La consulta se envía directamente a SGM, sin abrir otra aplicación.</p><ul><li>No necesitás conocer detalles técnicos.</li><li>Elegís el seguro que te interesa.</li><li>Tu consulta recibe atención personal.</li></ul></div>
+    <form class="lead-form" id="quickForm" novalidate><p class="form-error" role="alert"></p><p class="form-delivery-status" role="status" aria-live="polite"></p>
       <div class="form-grid two-columns">
         <label>Nombre y apellido <span aria-label="obligatorio">*</span><input name="fullName" type="text" autocomplete="name" required minlength="3" placeholder="Ej.: Juan Pérez"></label>
         <label>Celular / WhatsApp <span aria-label="obligatorio">*</span><input name="phone" type="tel" autocomplete="tel" required minlength="8" placeholder="Ej.: 099 123 456"></label>
-        <label>Email <small>opcional</small><input name="email" type="email" autocomplete="email" placeholder="nombre@email.com"></label>
-        <label>Seguro de interés <span aria-label="obligatorio">*</span><select name="insuranceType" required><option value="" disabled selected>Seleccioná una opción</option><option value="automotor">Seguro automotor</option><option value="hogar">Seguro de hogar</option><option value="viaje">Seguro de viaje / asistencia internacional</option><option value="vida">Seguro de vida y ahorro</option><option value="alquiler">Garantía de alquiler</option><option value="otro">Otro asunto</option></select></label>
+        <label>Email <small data-email-note>opcional</small><input name="email" type="email" autocomplete="email" placeholder="nombre@email.com"></label>
+        <label>Seguro de interés <span aria-label="obligatorio">*</span><select name="insuranceType" required><option value="" disabled selected>Seleccioná una opción</option><option value="automotor">Seguro automotor</option><option value="hogar">Seguro de hogar</option><option value="viaje">Seguro de viaje / asistencia internacional</option><option value="vida">Seguro de vida y ahorro</option><option value="alquiler">Garantía de alquiler</option><option value="comercio">Comercio y empresa</option><option value="otro">Otro asunto</option></select></label>
       </div>
       <label>¿En qué podemos ayudarte? <small>opcional</small><textarea name="message" rows="4" maxlength="700" placeholder="Contanos brevemente tu consulta"></textarea></label>
-      <input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="channel-note">Envío directo al correo de SGM. Te respondemos por el medio que prefieras.</p><input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label class="consent-row"><input name="consent" type="checkbox" required><span>Autorizo a SGM Seguros a usar estos datos para responder y dar seguimiento a mi consulta. <a href="#privacidad">Ver uso de datos</a>.</span></label>
-      <button class="button button-primary submit-button" type="submit">Continuar por WhatsApp →</button>
-      <p class="mini-note">Al continuar se abrirá WhatsApp con un resumen y una referencia SGM.</p>
+      <button id="completeQuote" class="button button-ghost" type="button">Quiero completar los datos de mi seguro →</button><button class="button button-primary submit-button" type="submit">Enviar consulta a SGM →</button>
+      <p class="mini-note">Al enviar, verás el resultado y la referencia de tu solicitud. No necesitás abrir WhatsApp ni tu correo.</p>
     </form>
   </div>
 
   <div class="form-shell quote-shell" id="quotePanel" role="tabpanel" aria-labelledby="tabQuote" hidden>
-    <div class="form-aside quote-aside"><span class="form-number">02</span><h3>Adelantá la información clave</h3><p>La entrevista cambia según el seguro elegido para pedir solo los datos que ayudan a preparar el próximo paso.</p><div class="progress-list" id="progressList"><div class="complete"><span>1</span>Cobertura</div><div><span>2</span>Datos del riesgo</div><div><span>3</span>Contacto</div></div></div>
-    <form class="lead-form quote-form" id="quoteForm">
+    <div class="form-aside quote-aside"><span class="form-number">02</span><h3>Adelantá la información clave</h3><p>La entrevista cambia según el seguro elegido para pedir solo los datos que ayudan a preparar el próximo paso.</p><nav class="progress-list" id="progressList" aria-label="Pasos de la cotización"><button type="button" class="complete" data-go-step="1" aria-current="step"><span>1</span>Cobertura</button><button type="button" data-go-step="2" disabled><span>2</span>Datos del riesgo</button><button type="button" data-go-step="3" disabled><span>3</span>Contacto</button></nav></div>
+    <form class="lead-form quote-form" id="quoteForm" novalidate><p class="form-error" role="alert"></p><p class="form-delivery-status" role="status" aria-live="polite"></p>
       <fieldset class="quote-step active" data-step="1"><legend>¿Qué querés cotizar?</legend><p class="field-intro">Elegí una cobertura. En el siguiente paso te pediremos la información específica.</p><div class="insurance-options" id="quoteOptions">
         <label><input type="radio" name="quoteType" value="automotor" checked><span><strong>Seguro automotor</strong><small>Entrevista adaptada</small></span></label>
         <label><input type="radio" name="quoteType" value="hogar"><span><strong>Seguro de hogar</strong><small>Entrevista adaptada</small></span></label>
         <label><input type="radio" name="quoteType" value="viaje"><span><strong>Seguro de viaje / asistencia internacional</strong><small>Entrevista adaptada</small></span></label>
         <label><input type="radio" name="quoteType" value="vida"><span><strong>Seguro de vida y ahorro</strong><small>Entrevista adaptada</small></span></label>
         <label><input type="radio" name="quoteType" value="alquiler"><span><strong>Garantía de alquiler</strong><small>Entrevista adaptada</small></span></label>
+        <label><input type="radio" name="quoteType" value="comercio"><span><strong>Comercio y empresa</strong><small>Asesoramiento para tu actividad</small></span></label>
       </div><div class="wizard-actions end"><button class="button button-primary" type="button" data-next="2">Continuar →</button></div></fieldset>
 
-      <fieldset class="quote-step" data-step="2"><legend id="riskLegend">Datos para seguro automotor</legend><p class="field-intro">No ingreses cédula ni adjuntes documentos. Un asesor los pedirá más adelante si fueran necesarios.</p><div class="form-grid two-columns risk-fields" id="riskFields"></div><div class="wizard-actions"><button class="button button-ghost" type="button" data-prev="1">Volver</button><button class="button button-primary" type="button" data-next="3">Datos de contacto →</button></div></fieldset>
+      <fieldset class="quote-step" data-step="2"><legend id="riskLegend">Datos para seguro automotor</legend><p class="field-intro">Completá los datos de tu seguro. La documentación nos ayuda a ajustar la cotización a tu caso.</p><div class="form-grid two-columns risk-fields" id="riskFields"></div><p class="field-intro" id="documentAdvice"></p><details class="quote-documents" open><summary>Adjuntar documentación · opcional</summary><p>Si la tenés a mano, nos ayuda a preparar una cotización más ajustada. También podés comenzar sin adjuntos.</p><div id="documentInputs"></div><p class="mini-note">Fotos JPG, PNG o HEIC y archivos PDF. Hasta 8 MB en total.</p></details><div class="wizard-actions"><button class="button button-ghost" type="button" data-prev="1">Volver</button><button class="button button-primary" type="button" data-next="3">Datos de contacto →</button></div></fieldset>
 
-      <fieldset class="quote-step" data-step="3"><legend>¿Cómo te contactamos?</legend><p class="field-intro">Al enviar, abrimos WhatsApp con el resumen listo para compartir.</p><div class="form-grid two-columns">
+      <fieldset class="quote-step" data-step="3"><legend>¿Cómo te contactamos?</legend><p class="field-intro">Revisaremos estos datos para preparar tu cotización. Podés enviar la solicitud sin salir de esta página.</p><div class="form-grid two-columns">
         <label>Nombre y apellido <span aria-label="obligatorio">*</span><input name="fullName" type="text" autocomplete="name" required minlength="3" placeholder="Ej.: Juan Pérez"></label>
         <label>Celular / WhatsApp <span aria-label="obligatorio">*</span><input name="phone" type="tel" autocomplete="tel" required minlength="8" placeholder="Ej.: 099 123 456"></label>
-        <label>Email <small>opcional</small><input name="email" type="email" autocomplete="email" placeholder="nombre@email.com"></label>
+        <label>Email <small data-email-note>opcional</small><input name="email" type="email" autocomplete="email" placeholder="nombre@email.com"></label>
         <label>Preferencia de respuesta<select name="responsePreference"><option value="WhatsApp">WhatsApp</option><option value="Llamada">Llamada</option><option value="Email">Email</option><option value="Indistinto">Indistinto</option></select></label>
-      </div><input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true"><label class="consent-row"><input name="consent" type="checkbox" required><span>Autorizo a SGM Seguros a usar estos datos para responder y dar seguimiento a esta solicitud. <a href="#privacidad">Ver uso de datos</a>.</span></label><div class="wizard-actions"><button class="button button-ghost" type="button" data-prev="2">Volver</button><button class="button button-primary" type="submit">Solicitar cotización →</button></div><p class="mini-note">La referencia se incluirá en el mensaje de WhatsApp para facilitar el seguimiento.</p></fieldset>
+      </div><p class="channel-note">Envío directo al correo de SGM. Te respondemos por el medio que prefieras.</p><input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true"><label class="consent-row"><input name="consent" type="checkbox" required><span>Autorizo a SGM Seguros a usar los datos y la documentación que comparta para preparar la cotización y dar seguimiento a esta solicitud. <a href="#privacidad">Ver uso de datos</a>.</span></label><div class="wizard-actions"><button class="button button-ghost" type="button" data-prev="2">Volver</button><button class="button button-primary" type="submit">Enviar solicitud a SGM →</button></div><label>¿Qué te gustaría resolver o mejorar? <small>opcional</small><textarea name="message" maxlength="1000" rows="3" placeholder="Ej.: mi póliza vence pronto y quiero comparar coberturas"></textarea></label><p class="mini-note">Tu solicitud no confirma un precio ni una cobertura. SGM revisa el caso y las condiciones antes de tu contratación.</p></fieldset>
     </form>
   </div>
 </section>
 
-<section class="section trust-section" id="confianza"><div class="trust-copy"><p class="eyebrow">Por qué SGM</p><h2>Una relación comercial basada en acompañamiento.</h2><p>La tecnología ordena el primer contacto; el asesoramiento sigue siendo humano. La web no reemplaza la evaluación profesional ni promete coberturas o precios sin validación.</p></div><div class="trust-list"><div><strong>01</strong><span>Atención directa y personalizada.</span></div><div><strong>02</strong><span>Alternativas de distintas compañías.</span></div><div><strong>03</strong><span>Seguimiento antes y después de contratar.</span></div><div><strong>04</strong><span>Atención en Montevideo y todo Uruguay.</span></div></div></section>
+<section class="section about-section" id="confianza" aria-labelledby="aboutTitle"><div class="about-card"><img class="about-brand" src="assets/sgm-logo.png" alt="SGM Seguros" width="102" height="43" loading="lazy"><div class="about-portrait"><img src="assets/gonzalo-martinez.jpg" alt="Gonzalo Martínez, asesoramiento en seguros en SGM" width="150" height="150" loading="lazy"></div><strong>Gonzalo Martínez</strong><span>Asesoramiento en seguros</span><p>Atención directa · Uruguay</p></div><div class="about-copy"><p class="eyebrow">Quiénes somos</p><h2 id="aboutTitle">Soy Gonzalo Martínez.<br>Hablemos de lo que querés proteger.</h2><p>En SGM Seguros te ayudo a evaluar alternativas para tu vehículo, tu hogar, tu familia o tu actividad.</p><p>Mi forma de trabajar es simple: escucharte, explicarte las opciones con claridad y acompañarte antes y después de contratar.</p><div class="about-values"><div><span>01</span><strong>Trato directo</strong><p>Tu consulta, con atención personal.</p></div><div><span>02</span><strong>Opciones claras</strong><p>Asesoramiento según tu situación.</p></div><div><span>03</span><strong>Seguimiento</strong><p>Acompañamiento también al renovar.</p></div></div><a class="button button-ghost" href="#elegi-tu-recorrido" data-journey="quick">Conversemos sobre tu seguro →</a></div></section>
 
-<section class="section privacy-note" id="privacidad"><div><p class="eyebrow">Privacidad</p><h2>Pedimos solo lo necesario.</h2></div><p>Los formularios solicitan datos de contacto y datos básicos del riesgo para responder la consulta. No pedimos cédula, libreta de propiedad ni documentación sensible desde esta web. Al continuar, la información se incluye en un mensaje de WhatsApp dirigido a SGM Seguros.</p></section>
+<section class="section privacy-note" id="privacidad"><div><p class="eyebrow">Privacidad</p><h2>Los datos de tu cotización.</h2></div><div><p>Pedimos información de contacto y del seguro para evaluar tu caso y preparar una propuesta. Podés adjuntar tu cédula; en automotores, también la libreta de propiedad, y para alquiler, los últimos cuatro recibos de sueldo. Si preferís, completamos la documentación después.</p><p>La solicitud y los adjuntos se procesan mediante el servicio de recepción de Google configurado por SGM y se entregan a su correo. Se utilizan para atender tu consulta y preparar la cotización. La web no incorpora prospectos a la app ni confirma una contratación.</p></div></section>
 </main>
 
-<footer><div class="footer-brand"><span class="brand-mark">SGM</span><div><strong>SGM Seguros Uruguay</strong><p>Asesoramiento en seguros para personas, familias y proyectos.</p></div></div><div class="footer-contact"><a href="tel:+59898907603">098 907 603</a><a href="mailto:SGM.gonzalomartinez@gmail.com">SGM.gonzalomartinez@gmail.com</a><span>Montevideo · Atención a todo Uruguay</span></div><div class="footer-bottom"><span>© 2026 SGM Seguros</span><span>Automotor · Hogar · Vida · Viaje · Garantía de alquiler</span></div></footer>
+<section class="section faq" id="preguntas"><p class="eyebrow">Preguntas frecuentes</p><h2>Antes de empezar.</h2><details><summary>¿La cotización queda confirmada al completar el formulario?</summary><p>El formulario prepara tu solicitud. SGM revisa la información y las alternativas disponibles antes de enviarte una cotización. El precio, la aceptación del riesgo y la cobertura se confirman en el proceso de contratación.</p></details><details><summary>¿Puedo consultar por un seguro que ya tengo?</summary><p>Sí. Contanos la compañía, qué querés revisar y cuándo vence, si lo sabés. No canceles tu seguro actual por completar esta consulta; primero revisaremos la continuidad y las condiciones.</p></details><details><summary>¿Dónde veo mis pólizas si ya soy cliente?</summary><p>Usá el acceso al portal de clientes de SGM con tu usuario habilitado. Si todavía no tenés acceso, escribinos para ayudarte.</p></details><details><summary>¿Qué pasa con los datos que completo?</summary><p>Al pulsar Enviar, la consulta y los adjuntos elegidos se procesan mediante el servicio de recepción de Google configurado por SGM para entregarlos a su correo. Recibir una solicitud no la convierte en una póliza activa. La documentación es opcional para iniciar el contacto.</p></details></section>
+<footer><div class="footer-brand"><img class="brand-logo" src="assets/sgm-logo.png" alt="SGM Seguros" width="126" height="53"><div><strong>SGM Seguros Uruguay</strong><p>Asesoramiento en seguros para personas, familias y proyectos.</p></div></div><div class="footer-contact"><a href="tel:+59898907603">098 907 603</a><a href="mailto:SGM.gonzalomartinez@gmail.com">SGM.gonzalomartinez@gmail.com</a><span>Montevideo · Atención a todo Uruguay</span></div><div class="footer-bottom"><span>© <span id="copyrightYear">2026</span> SGM Seguros</span><span>Automotor · Hogar · Vida · Viaje · Garantía de alquiler</span></div></footer>
 <a class="floating-whatsapp" href="https://wa.me/59898907603?text=Hola%20SGM%20Seguros%2C%20necesito%20asesoramiento." target="_blank" rel="noopener" aria-label="Hablar con SGM Seguros por WhatsApp">WA</a>
 
-<script>
-const WA_NUMBER='59898907603';
-const labels={automotor:'Seguro automotor',hogar:'Seguro de hogar',viaje:'Seguro de viaje / asistencia internacional',vida:'Seguro de vida y ahorro',alquiler:'Garantía de alquiler',otro:'Otro asunto'};
-const departments=['Artigas','Canelones','Cerro Largo','Colonia','Durazno','Flores','Florida','Lavalleja','Maldonado','Montevideo','Paysandú','Río Negro','Rivera','Rocha','Salto','San José','Soriano','Tacuarembó','Treinta y Tres'];
-const detailLabels={marca:'Marca',modelo:'Modelo',anio:'Año',uso:'Uso',departamento:'Departamento',coberturaActual:'Seguro actual',localidad:'Localidad',tipoVivienda:'Tipo de vivienda',condicion:'Relación con la vivienda',superficie:'Superficie aproximada',destino:'Destino',fechaSalida:'Salida',fechaRegreso:'Regreso',viajeros:'Cantidad de viajeros',edades:'Edades',edad:'Edad',objetivo:'Objetivo principal',capitalOrientativo:'Capital orientativo',tipoInmueble:'Tipo de inmueble',alquilerEstimado:'Alquiler estimado',situacionLaboral:'Situación laboral',cantidadSolicitantes:'Solicitantes'};
-function waUrl(message){return 'https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(message)}
-function reference(){const d=new Date();const y=d.getFullYear();const m=String(d.getMonth()+1).padStart(2,'0');const day=String(d.getDate()).padStart(2,'0');const code=Math.random().toString(36).slice(2,6).toUpperCase();return `SGM-${y}${m}${day}-${code}`}
-function origin(){const p=new URLSearchParams(location.search);return ['web',p.get('utm_source')||'organico',p.get('utm_campaign')].filter(Boolean).join('-').slice(0,80)}
-const tabQuick=document.getElementById('tabQuick'),tabQuote=document.getElementById('tabQuote'),quickPanel=document.getElementById('quickPanel'),quotePanel=document.getElementById('quotePanel');
-const mobileLayout=window.matchMedia('(max-width: 760px)');
-function showJourney(which){const q=which==='quick';quickPanel.hidden=!q;quotePanel.hidden=q;tabQuick.classList.toggle('active',q);tabQuote.classList.toggle('active',!q);tabQuick.setAttribute('aria-selected',q?'true':'false');tabQuote.setAttribute('aria-selected',q?'false':'true');}
-function journeyTarget(which){return mobileLayout.matches?(which==='quick'?quickPanel:quotePanel):document.getElementById('elegi-tu-recorrido')}
-function scrollToJourney(which){journeyTarget(which).scrollIntoView({behavior:'smooth',block:'start'})}
-tabQuick.addEventListener('click',()=>showJourney('quick'));tabQuote.addEventListener('click',()=>showJourney('quote'));
-document.querySelectorAll('[data-journey]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const which=a.dataset.journey==='quote'?'quote':'quick';showJourney(which);if(which==='quote')showQuoteStep(1);scrollToJourney(which);window.setTimeout(()=>{const target=which==='quick'?document.querySelector('#quickForm input[name="fullName"]'):document.querySelector('#quoteOptions input[name="quoteType"]');if(target)target.focus({preventScroll:true})},500)}));
-document.querySelectorAll('[data-prefill]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showJourney('quote');const v=a.dataset.prefill;const r=document.querySelector(`input[name="quoteType"][value="${v}"]`);if(r){r.checked=true;renderRiskFields();showQuoteStep(1)}scrollToJourney('quote')}));
 
-document.getElementById('quickForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);if(d.get('website'))return;const ref=reference();const msg=['Hola SGM Seguros. Quiero realizar una consulta.',`Referencia: ${ref}`,`Nombre: ${String(d.get('fullName')).trim()}`,`Teléfono: ${String(d.get('phone')).trim()}`,`Interés: ${labels[d.get('insuranceType')]||'Otro asunto'}`,d.get('email')?`Email: ${String(d.get('email')).trim()}`:'',d.get('message')?`Consulta: ${String(d.get('message')).trim()}`:'',`Origen: ${origin()}`].filter(Boolean).join('\n');location.href=waUrl(msg)});
-
-let quoteStep=1;
-function showQuoteStep(step){quoteStep=step;document.querySelectorAll('.quote-step').forEach(el=>el.classList.toggle('active',Number(el.dataset.step)===step));document.querySelectorAll('#progressList>div').forEach((el,i)=>el.classList.toggle('complete',step>=i+1));}
-function currentType(){return document.querySelector('input[name="quoteType"]:checked').value}
-function fieldInput(key,label,placeholder,type='text',required=true){return `<label>${label}${required?' <span aria-label="obligatorio">*</span>':' <small>opcional</small>'}<input data-detail="${key}" type="${type}" ${required?'required':''} placeholder="${placeholder}"></label>`}
-function fieldSelect(key,label,options,required=true){return `<label>${label}${required?' <span aria-label="obligatorio">*</span>':' <small>opcional</small>'}<select data-detail="${key}" ${required?'required':''}><option value="" disabled selected>Seleccioná una opción</option>${options.map(o=>`<option value="${o}">${o}</option>`).join('')}</select></label>`}
-function renderRiskFields(){const t=currentType(),box=document.getElementById('riskFields');document.getElementById('riskLegend').textContent='Datos para '+labels[t].toLowerCase();let h='';if(t==='automotor'){h=fieldInput('marca','Marca','Ej.: Chevrolet')+fieldInput('modelo','Modelo','Ej.: Onix')+fieldInput('anio','Año','Ej.: 2022','number')+fieldSelect('uso','Uso principal',['Particular','Comercial','Trabajo / reparto','Otro'])+fieldSelect('departamento','Departamento',departments)+fieldSelect('coberturaActual','¿Tiene seguro actualmente?',['Sí','No','No estoy seguro'],false)}else if(t==='hogar'){h=fieldSelect('tipoVivienda','Tipo de vivienda',['Casa','Apartamento','Local','Otro'])+fieldSelect('condicion','Relación con la vivienda',['Propietario/a','Inquilino/a','Otra'])+fieldSelect('departamento','Departamento',departments)+fieldInput('localidad','Localidad o barrio','Ej.: Pocitos')+fieldInput('superficie','Superficie aproximada','Ej.: 80 m²','text',false)+fieldSelect('uso','Uso',['Vivienda permanente','Vivienda temporal','Alquiler','Otro'])}else if(t==='viaje'){h=fieldInput('destino','Destino','Ej.: España')+fieldInput('viajeros','Cantidad de viajeros','Ej.: 2','number')+fieldInput('fechaSalida','Fecha de salida','','date')+fieldInput('fechaRegreso','Fecha de regreso','','date')+`<div class="span-two">${fieldInput('edades','Edades de los viajeros','Ej.: 35 y 32')}</div>`}else if(t==='vida'){h=fieldInput('edad','Edad','Ej.: 38','number')+fieldSelect('objetivo','Objetivo principal',['Protección familiar','Ahorro','Respaldo de ingresos','Quiero asesoramiento'])+`<div class="span-two">${fieldInput('capitalOrientativo','Capital o aporte orientativo','Opcional','text',false)}</div>`}else{h=fieldSelect('tipoInmueble','Tipo de inmueble',['Vivienda','Local comercial','Otro'])+fieldSelect('departamento','Departamento',departments)+fieldInput('alquilerEstimado','Alquiler mensual estimado','Ej.: $ 28.000')+fieldSelect('situacionLaboral','Situación laboral',['Dependiente','Independiente','Jubilado/a','Otra'])+fieldInput('cantidadSolicitantes','Cantidad de solicitantes','Ej.: 1','number')}box.innerHTML=h}
-document.querySelectorAll('input[name="quoteType"]').forEach(r=>r.addEventListener('change',renderRiskFields));renderRiskFields();
-document.querySelectorAll('[data-next]').forEach(btn=>btn.addEventListener('click',()=>{const target=Number(btn.dataset.next);if(target===3){const fields=[...document.querySelectorAll('#riskFields input[required],#riskFields select[required]')];if(!fields.every(f=>f.reportValidity()))return;}showQuoteStep(target)}));
-document.querySelectorAll('[data-prev]').forEach(btn=>btn.addEventListener('click',()=>showQuoteStep(Number(btn.dataset.prev))));
-document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;if(!f.reportValidity())return;const d=new FormData(f);if(d.get('website'))return;const details=[...document.querySelectorAll('#riskFields [data-detail]')].filter(el=>String(el.value).trim()).map(el=>`${detailLabels[el.dataset.detail]||el.dataset.detail}: ${String(el.value).trim()}`);const ref=reference(),t=currentType();const msg=['SOLICITUD DE COTIZACIÓN SGM',`Referencia: ${ref}`,`Nombre: ${String(d.get('fullName')).trim()}`,`Teléfono: ${String(d.get('phone')).trim()}`,d.get('email')?`Email: ${String(d.get('email')).trim()}`:'',`Seguro: ${labels[t]}`,...details,`Respuesta preferida: ${d.get('responsePreference')}`,`Origen: ${origin()}`].filter(Boolean).join('\n');location.href=waUrl(msg)});
-</script>
+<dialog id="requestDialog" class="request-dialog" aria-labelledby="requestTitle" aria-describedby="requestInstructions"><div class="dialog-top"><h2 id="requestTitle">Tu solicitud, lista para revisar</h2><button id="dialogClose" class="dialog-close" type="button" aria-label="Cerrar resumen">Cerrar ×</button></div><p class="dialog-ref" id="requestReference"></p><p id="requestDestination"></p><label for="requestSummary">Resumen de tu solicitud</label><textarea id="requestSummary" readonly></textarea><p id="requestInstructions"></p><div class="dialog-actions"><a id="requestSend" class="button button-ghost" rel="noopener noreferrer" target="_blank">WhatsApp · opcional →</a><button id="requestCopy" class="button button-ghost" type="button">Copiar resumen</button></div><p id="copyStatus" role="status"></p><p>La recepción de una consulta no confirma una cotización ni una cobertura contratada.</p></dialog><noscript><style>.lead-form{display:none!important}</style><p style="padding:24px">Para completar los formularios necesitás JavaScript. También podés contactarnos directamente por WhatsApp al 098 907 603 o por correo a SGM.gonzalomartinez@gmail.com.</p></noscript><script type="module" src="assets/sgm-web.js?v=20261105-6"></script>
 </body>
 </html>

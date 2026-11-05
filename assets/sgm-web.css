@@ -38,3 +38,11 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-ser
 .progress-list>button:not(:disabled):active{transform:translateY(2px)}
 .progress-list>button:focus-visible{outline:2px solid var(--red);outline-offset:4px}
 .progress-list>button:disabled{cursor:default;opacity:1}
+
+/* Acceso permanente al portal junto al botón de cotización. */
+.header-actions{display:flex;align-items:center;gap:10px;justify-self:end}.header-portal{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #626262;border-radius:6px;padding:10px 14px;font-size:.8rem;font-weight:750;white-space:nowrap;color:#fff;transition:background .15s,transform .1s}.header-portal:hover{background:#303030}.header-portal:active{transform:translateY(1px)}
+@media(min-width:1101px) and (max-width:1350px){.site-header{gap:18px;padding-inline:24px}.site-header nav{gap:16px}.brand-name{display:none}}
+@media(max-width:760px){.site-header{gap:9px;padding-inline:14px}.header-actions{gap:7px}.header-portal{padding:8px 10px;font-size:.73rem}.header-actions .header-action{padding:8px 11px}.site-header .brand-logo{width:94px}.header-actions .header-action,.header-portal{min-height:44px}}
+@media(max-width:359px){.site-header{gap:6px;padding-inline:10px}.site-header .brand-logo{width:78px}.header-actions{gap:5px}.header-portal{padding-inline:8px}}
+
+@media(min-width:1101px){.site-header nav .portal-nav{display:none}}
